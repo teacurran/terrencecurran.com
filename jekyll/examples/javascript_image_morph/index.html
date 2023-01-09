@@ -1,0 +1,66 @@
+<html>
+<head>
+	<script type="text/javascript" src="js/prototype.js"></script>
+	<script type="text/javascript" src="js/scriptaculous.js?load=effects"></script>
+	
+	<script language="javascript">
+		//preload the images and load them into an array
+		imageArray = new Array(); 
+		
+		var image01 = new Image();
+		image01.src = 'photo_01.jpg';
+		imageArray[imageArray.length] = image01;
+
+		var image02 = new Image();
+		image02.src = 'photo_02.jpg';
+		imageArray[imageArray.length] = image02;
+
+		var image03 = new Image();
+		image03.src = 'photo_03.jpg';
+		imageArray[imageArray.length] = image03;
+
+		var image04 = new Image();
+		image04.src = 'photo_04.jpg';
+		imageArray[imageArray.length] = image04;
+
+		var image05 = new Image();
+		image05.src = 'photo_05.jpg';
+		imageArray[imageArray.length] = image05;
+		
+		// imageIndex is going to be the index of the next image to display.  
+		// images 0 and 1 are already loaded into the html
+		var imageIndex = 1;vo,
+
+		function switchImage() {
+			// place the next image to be displayed to the front
+			$('imageFront').src = imageArray[imageIndex].src;
+
+			// make the image in front appear, when it is done swap it with the image in the back
+			new Effect.Appear('imageFront', {
+				afterFinish: function() { 
+					// make the image in the back the same src as the image in the front
+					$('imageBehind').src = $('imageFront').src;
+					
+					//hide the image in the front
+					$('imageFront').style.display = 'none';
+					
+					// increment the index
+					imageIndex++;
+					// if we have indexed past the end of the array, go back to zero
+					if (imageIndex == imageArray.length) { 
+						imageIndex = 0;
+					}
+				}
+			});
+		}
+
+	</script>
+</head>
+<body onload="setInterval('switchImage()', 3000);">
+	<img id="imageBehind" src="photo_01.jpg" style="position:absolute; top:0; left:0;" />
+	<img id="imageFront" src="photo_02.jpg" style="position:absolute; top:0; left:0; display:none;" />
+</body>
+</html>	
+	
+	
+	

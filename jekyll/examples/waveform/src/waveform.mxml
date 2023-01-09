@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" creationComplete="init()" width="500" height="250" borderColor="#DEDEDE" themeColor="#4D4E4E" backgroundGradientAlphas="[1.0, 1.0]" backgroundGradientColors="[#C2C2C2, #646464]">
+	<mx:Script>
+		<![CDATA[
+		import com.wirelust.waveform.Waveform;
+		import flash.media.Microphone;
+		
+		private var wave:Waveform = new Waveform();
+		private var mic:Microphone;
+		
+		private function init():void {
+			wave.height = 50;
+			wave.width = 450;
+			wave.y = this.height/2 - wave.height/2;
+			wave.x = this.width/2 - wave.width/2;
+			this.addChild(wave);
+			
+			mic = Microphone.getMicrophone();
+			mic.setUseEchoSuppression(false);
+			
+			// loopback is required so we can get the activity level and create the waveform. - so stupid
+			mic.setLoopBack(true);
+			
+			// turn off the volume for the loopback
+			var mySoundTransform:SoundTransform = new SoundTransform();
+			mySoundTransform.volume = 0;
+			mic.soundTransform = mySoundTransform;
+			
+			this.addEventListener(Event.ENTER_FRAME, onFrameEnter);
+		}
+		
+		private function onFrameEnter(event:Event):void {
+			if (mic != null && !mic.muted) {
+				wave.add(mic.activityLevel);
+				wave.invalidateDisplayList();
+			}
+		}
+		]]>
+	</mx:Script>
+</mx:Application>
