@@ -23,7 +23,7 @@ email: tea@grilledcheese.com
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: teacurran
 github_username:  teacurran
-url: '/'
+url: ''
 name: Terrence Curran
 description: 'tech notes'
 
