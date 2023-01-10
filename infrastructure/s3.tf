@@ -55,6 +55,18 @@ resource "aws_s3_bucket_website_configuration" "root_bucket" {
   }
 }
 
+resource "aws_s3_bucket_cors_configuration" "root_bucket" {
+  bucket = aws_s3_bucket.www_bucket.bucket
+
+  cors_rule {
+    allowed_headers = ["Authorization", "Content-Length"]
+    allowed_methods = ["GET", "POST"]
+    allowed_origins = ["https://${local.domain_name}"]
+    max_age_seconds = 3000
+  }
+}
+
+
 data "aws_iam_policy_document" "www_bucket" {
   statement {
     sid = "${local.deployment.site}-${local.environment}-policy"
