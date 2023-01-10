@@ -3,7 +3,7 @@
 resource "aws_cloudfront_distribution" "www_s3_distribution" {
   origin {
     domain_name = aws_s3_bucket_website_configuration.www_bucket.website_endpoint
-    origin_id   = "S3-www.${var.bucket_name}"
+    origin_id   = "S3-www.${local.bucket_name}"
     custom_origin_config {
       http_port              = 80
       https_port             = 443
@@ -21,7 +21,7 @@ resource "aws_cloudfront_distribution" "www_s3_distribution" {
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
-    target_origin_id = "S3-www.${var.bucket_name}"
+    target_origin_id = "S3-www.${local.bucket_name}"
 
     forwarded_values {
       query_string = false
@@ -111,7 +111,7 @@ resource "aws_cloudfront_distribution" "root_s3_distribution" {
     minimum_protocol_version = "TLSv1.2_2018"
   }
 
-  tags = var.common_tags
+  tags = local.tags
 }
 
 

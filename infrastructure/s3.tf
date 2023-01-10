@@ -17,7 +17,7 @@ resource "aws_s3_bucket_website_configuration" "www_bucket" {
   bucket = aws_s3_bucket.www_bucket.bucket
   redirect_all_requests_to {
     protocol = "https"
-    host_name = domain_name
+    host_name = local.domain_name
   }
 }
 
@@ -36,7 +36,7 @@ resource "aws_s3_bucket_cors_configuration" "www_bucket" {
 resource "aws_s3_bucket" "root_bucket" {
   bucket = local.bucket_name
 
-  tags = local.common_tags
+  tags = local.tags
 }
 
 resource "aws_s3_bucket_acl" "root_bucket" {

@@ -6,7 +6,7 @@ resource "aws_route53_zone" "main" {
 
 resource "aws_route53_record" "root-a" {
   zone_id = aws_route53_zone.main.zone_id
-  name    = var.domain_name
+  name    = local.domain_name
   type    = "A"
   records = ["198.185.159.144", "198.185.159.145", "198.49.23.144", "198.49.23.145"]
   ttl     = 900
@@ -26,7 +26,7 @@ resource "aws_route53_record" "cloudfront-a" {
 
 resource "aws_route53_record" "www-a" {
   zone_id = aws_route53_zone.main.zone_id
-  name    = "www.${var.domain_name}"
+  name    = "www.${local.domain_name}"
   type    = "A"
   records = ["198.185.159.144", "198.185.159.145", "198.49.23.144", "198.49.23.145"]
   ttl     = 900

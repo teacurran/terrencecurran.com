@@ -15,10 +15,10 @@ locals {
 
   environment = terraform.workspace
   deployment = merge(local.config.defaults, local.config[terraform.workspace])
-  domain_name = "${deployment.domain_prefix}${deployment.domain_name}"
+  domain_name = "${local.deployment.domain_prefix}${local.deployment.domain_name}"
 
   tags = {
-    Namespace = local.namespace
+    Namespace = local.domain_name
     Environment = local.environment
     Owner = "Terrence Curran"
     ManagedBy = "Terraform"
