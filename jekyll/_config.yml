@@ -18,7 +18,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: WireLust
+title: Terrence Curran
+url: https://terrencecurran.com
 email: tea@grilledcheese.com
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: teacurran
@@ -310,6 +311,7 @@ paginate: 5
 
 kramdown:
   input: GFM
+  syntax_highlighter: rouge
 
 # Default YAML values (more information on Jekyll's site)
 defaults:
@@ -339,10 +341,50 @@ exclude:
   - docs/
 
 plugins:
+  - jekyll-gallery-generator
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-minifier
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
 
+gallery:
+  dir: photos               # Path to the gallery
+  symlink: false            # false: copy images into _site. true: create symbolic links (saves disk space)
+  title: "photos"           # Title for gallery index page
+  title_prefix: "photos: "  # Title prefix for gallery pages. Gallery title = title_prefix + gallery_name
+  sort_field: "name"        # How to sort galleries on the index page.
+  default_image_sort:       "naturalized"
+
+  # Possible values are: title, date_time, best_image
+  thumbnail_size:
+    x: 400                  # max width of thumbnails (in pixels)
+    y: 400                  # max height of thumbnails (in pixels)
+
+jekyll-minifier:
+  preserve_php: false                # Default: false
+  remove_spaces_inside_tags: true   # Default: true
+  remove_multi_spaces: true         # Default: true
+  remove_comments: true             # Default: true
+  remove_intertag_spaces: true      # Default: false
+  remove_quotes: false              # Default: false
+  compress_css: false                # Default: true
+  compress_javascript: false         # Default: true
+  compress_json: true               # Default: true
+  simple_doctype: false             # Default: false
+  remove_script_attributes: false   # Default: false
+  remove_style_attributes: false    # Default: false
+  remove_link_attributes: false     # Default: false
+  remove_form_attributes: false     # Default: false
+  remove_input_attributes: false    # Default: false
+  remove_javascript_protocol: false # Default: false
+  remove_http_protocol: false       # Default: false
+  remove_https_protocol: false      # Default: false
+  preserve_line_breaks: false       # Default: false
+  simple_boolean_attributes: false  # Default: false
+  compress_js_templates: true      # Default: false
+
+feed:
+  posts_limit: 20
