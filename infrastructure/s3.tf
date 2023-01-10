@@ -32,7 +32,6 @@ resource "aws_s3_bucket_cors_configuration" "www_bucket" {
   }
 }
 
-# S3 bucket for redirecting non-www to www.
 resource "aws_s3_bucket" "root_bucket" {
   bucket = local.bucket_name
 
@@ -45,7 +44,7 @@ resource "aws_s3_bucket_acl" "root_bucket" {
 }
 
 resource "aws_s3_bucket_website_configuration" "root_bucket" {
-  bucket = aws_s3_bucket.www_bucket.bucket
+  bucket = aws_s3_bucket.root_bucket.bucket
 
   index_document {
     suffix = "index.html"
