@@ -19,14 +19,13 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Terrence Curran
-url: https://terrencecurran.com
 email: tea@grilledcheese.com
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: teacurran
 github_username:  teacurran
-# url: '/'
-name: WireLust
-description: 'Technology and stuff, you know.'
+url: '/'
+name: Terrence Curran
+description: 'tech notes'
 
 
 # Build settings
@@ -67,7 +66,7 @@ remote_theme: daattali/beautiful-jekyll@5.0.0
 ############################
 
 # Name of website
-title: WireLust
+title: Terrence Curran
 
 # Your name to show in the footer
 author: Terrence Curran
@@ -78,9 +77,8 @@ author: Terrence Curran
 
 navbar-links:
   About Me: "about"
-  Resources:
+  Elsewhere:
     - Approaching Pi: "https://www.approachingpi.com"
-  Author's home: "https://about.me/terrencecurran"
 
 ################
 # --- Logo --- #
