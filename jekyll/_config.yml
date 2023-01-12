@@ -26,6 +26,8 @@ github_username:  teacurran
 url: ''
 name: Terrence Curran
 description: 'tech notes'
+source: ./
+destination: ./_site/
 
 
 # Build settings
@@ -343,7 +345,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
-  - jekyll-minifier
+  - jekyll/webpack
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
@@ -386,3 +388,12 @@ jekyll-minifier:
 
 feed:
   posts_limit: 20
+
+webpack:
+  debounce:
+  only_in:
+    - _site
+    - _build
+  # cleanup_files:
+  #   - js
+  #   - node_modules

@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const devMode = process.env.NODE_ENV !== "production";
 
 // https://webpack.js.org/configuration/
 module.exports = {
@@ -34,8 +35,20 @@ module.exports = {
         rules: [
             { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
             {
-              test: /.s?css$/,
-              use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+              test: /\.(sa|sc|c)ss$/,
+              use: [
+                devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+                "css-loader",
+                {
+                    loader: 'sass-loader',
+                    ident: 'sass',
+                    
+                    options: { 
+                        implementation: require("sass"),
+                        sourceMap: true 
+                    }
+                }
+              ],
             }
         ],
     },

@@ -40,3 +40,4 @@ gem "nokogiri"
 gem "open-uri"
 gem 'jekyll-gallery-generator', git: 'https://github.com/teacurran/jekyll-gallery-generator.git'
 gem "jekyll-minifier", "~> 0.1.10"
+gem 'jekyll-webpack'
