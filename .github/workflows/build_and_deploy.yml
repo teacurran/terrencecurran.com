@@ -26,7 +26,7 @@ jobs:
           path: ./jekyll/vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+        uses: actions/setup-ruby@v1
         with:
           bundler-cache: true
       - name: "Bundle install"
@@ -37,7 +37,7 @@ jobs:
           bundle install --jobs 4 --retry 3
         working-directory: ./jekyll
       - name: Set up Node
-        uses: ruby/setup-node@v3
+        uses: actions/setup-node@v3
         with:
           node-version: 16
       - run: npm install
