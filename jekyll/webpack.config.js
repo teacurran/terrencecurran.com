@@ -7,7 +7,7 @@ const devMode = process.env.NODE_ENV !== "production";
 // https://webpack.js.org/configuration/
 module.exports = {
     plugins: [new MiniCssExtractPlugin({
-            filename: '../css/[name]-[contenthash].css'
+            filename: '../css/[name]-bundle.css'
         }
     )],
     externals: {
@@ -18,7 +18,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'js'),
-        filename: '[name]-[contenthash].js',
+        filename: '[name]-bundle.js',
     },
     resolve: {
         extensions: ['.json', '.js', '.jsx'],
@@ -42,10 +42,10 @@ module.exports = {
                 {
                     loader: 'sass-loader',
                     ident: 'sass',
-                    
-                    options: { 
+
+                    options: {
                         implementation: require("sass"),
-                        sourceMap: true 
+                        sourceMap: true
                     }
                 }
               ],
