@@ -2,22 +2,22 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const devMode = process.env.NODE_ENV !== "production";
+const devMode = process.env.JEKYLL_ENV !== "production";
 
 // https://webpack.js.org/configuration/
 module.exports = {
     plugins: [new MiniCssExtractPlugin({
-            filename: '../css/[name]-bundle.css'
+            filename: '../css/style-bundle.css'
         }
     )],
     externals: {
         jquery: 'jQuery',
     },
     entry: {
-        main: path.join(__dirname, 'js', 'main'),
+        main: path.join(__dirname, 'assets', 'js', 'main'),
     },
     output: {
-        path: path.resolve(__dirname, 'js'),
+        path: path.resolve(__dirname, 'assets', 'js'),
         filename: '[name]-bundle.js',
     },
     resolve: {

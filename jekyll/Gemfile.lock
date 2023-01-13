@@ -131,7 +131,7 @@ DEPENDENCIES
   jekyll-remote-theme
   jekyll-sitemap
   jekyll-webpack
-  minima (~> 2.5)
+  minima (~> 2.5.1)
   nokogiri
   open-uri
   tzinfo (>= 1, < 3)
