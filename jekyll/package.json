@@ -5,7 +5,7 @@
     "turbolinks": "^5.2.0"
   },
   "scripts": {
-    "develop": "bundle exec jekyll clean && run-p develop:{webpack,jekyll}",
+    "develop": "bundle exec jekyll clean && npm run develop:jekyll",
     "develop:jekyll": "sleep 5 && bundle exec jekyll serve --watch",
     "develop:webpack": "npm rebuild node-sass && webpack --mode development --watch",
     "build": "run-s build:webpack build:jekyll",

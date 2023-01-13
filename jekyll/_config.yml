@@ -31,8 +31,8 @@ destination: ./_site/
 
 
 # Build settings
-# theme: minima
-remote_theme: daattali/beautiful-jekyll@5.0.0
+theme: minima
+# remote_theme: daattali/beautiful-jekyll@5.0.0
 
 # Exclude from processing.
 # The following items will not be processed, by default.
