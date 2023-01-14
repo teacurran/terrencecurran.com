@@ -4,7 +4,6 @@ locals {
 
 resource "aws_s3_bucket" "www_bucket" {
   bucket = "www.${local.bucket_name}"
-
   tags = local.tags
 }
 
