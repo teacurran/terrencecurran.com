@@ -2,7 +2,7 @@ resource "aws_acm_certificate" "ssl_certificate" {
   provider                  = aws.acm_provider
   domain_name               = local.domain_name
 
-  subject_alternative_names = ["*.${local.domain_name}", "*.${local.domain_namew[1]}"]
+  subject_alternative_names = ["*.${local.domain_name}", local.domain_names[1], "*.${local.domain_names[1]}"]
   validation_method         = "DNS"
 
   tags = local.tags
