@@ -1,5 +1,5 @@
 locals {
-  bucket_name = "${local.deployment.domain_name}-${local.environment}"
+  bucket_name = "${local.domain_name}-${local.environment}"
 }
 
 resource "aws_s3_bucket" "www_bucket" {

@@ -14,7 +14,7 @@ resource "aws_cloudfront_distribution" "www_s3_distribution" {
   is_ipv6_enabled     = true
   default_root_object = "index.html"
 
-  aliases = ["www.${local.domain_name}"]
+  aliases = [for domain_name in local.domain_names: "www.${domain_name}"]
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
@@ -66,7 +66,7 @@ resource "aws_cloudfront_distribution" "root_s3_distribution" {
   enabled         = true
   is_ipv6_enabled = true
 
-  aliases = [local.domain_name, "cloudfront.${local.domain_name}"]
+  aliases = local.domain_names
 
   custom_error_response {
     error_caching_min_ttl = 0

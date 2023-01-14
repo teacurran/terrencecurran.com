@@ -1,20 +1,14 @@
 # Route 53 for domain
 resource "aws_route53_zone" "main" {
-  name = local.domain_name
+  count = length(local.domain_names)
+  name = local.domain_names[count.index]
   tags = local.tags
 }
 
-resource "aws_route53_record" "root-a" {
-  zone_id = aws_route53_zone.main.zone_id
-  name    = local.domain_name
-  type    = "A"
-  records = ["198.185.159.144", "198.185.159.145", "198.49.23.144", "198.49.23.145"]
-  ttl     = 900
-}
-
 resource "aws_route53_record" "cloudfront-a" {
-  zone_id = aws_route53_zone.main.zone_id
-  name    = "cloudfront.${local.domain_name}"
+  count = length(local.domain_names)
+  zone_id = aws_route53_zone.main[count.index].zone_id
+  name    = local.domain_names[count.index]
   type    = "A"
 
   alias {
@@ -25,11 +19,16 @@ resource "aws_route53_record" "cloudfront-a" {
 }
 
 resource "aws_route53_record" "www-a" {
-  zone_id = aws_route53_zone.main.zone_id
-  name    = "www.${local.domain_name}"
+  count = length(local.domain_names)
+  zone_id = aws_route53_zone.main[count.index].zone_id
+  name    = "www.${local.domain_names[count.index]}"
   type    = "A"
-  records = ["198.185.159.144", "198.185.159.145", "198.49.23.144", "198.49.23.145"]
-  ttl     = 900
+
+  alias {
+    name                   = aws_cloudfront_distribution.root_s3_distribution.domain_name
+    zone_id                = aws_cloudfront_distribution.root_s3_distribution.hosted_zone_id
+    evaluate_target_health = false
+  }
 }
 
 resource "aws_route53_record" "cert_validation" {
@@ -38,7 +37,7 @@ resource "aws_route53_record" "cert_validation" {
       name    = dvo.resource_record_name
       record  = dvo.resource_record_value
       type    = dvo.resource_record_type
-      zone_id = aws_route53_zone.main.zone_id
+      zone_id = aws_route53_zone.main[0].zone_id
     }
   }
 
