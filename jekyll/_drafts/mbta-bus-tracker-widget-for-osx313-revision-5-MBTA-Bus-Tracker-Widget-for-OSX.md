@@ -21,7 +21,7 @@ If you have OSX 10.4 Tiger installed. Simply download the [zip file](/apps/mbta/
 
 ## Credits
 
-[Terrence Curran](http://www.wirelust.com) – Code and Design.  
+[Terrence Curran](http://www.terrencecurran.com) – Code and Design.  
 [Dave Nelson](http://www.opt-shift.com) – Code from NextMuni.  
 [NextBus](http://www.nextbus.com) – GPS Tracking, Prediction, and API.  
 [MassDOT](http://www.eot.state.ma.us/developers/) – for their push towards openness.

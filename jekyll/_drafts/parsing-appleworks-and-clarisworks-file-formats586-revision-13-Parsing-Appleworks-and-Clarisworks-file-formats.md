@@ -12,7 +12,7 @@ Over the past few years, when I have downtime, I sometimes like to reverse engin
 
 I've spent a lot of time trying to figure out file format for Appleworks and Clarisworks. My latest efforts have been to take a file, make a small change, then use [Hex Fiend](http://ridiculousfish.com/hexfiend/) to compare what has changed in the binary format.
 
-After years of off and on tinkering and documenting I finally wrote a basic parser for Appleworks and Clarisworks word processor files. I figured out a lot about the file format, but it still has a long way to go. You can view my current documenting status [here](http://wiki.wirelust.com/x/index.php/AppleWorks_/_ClarisWorks) and download source for the parser on [GitHub](https://github.com/teacurran/appleworks-parser).
+After years of off and on tinkering and documenting I finally wrote a basic parser for Appleworks and Clarisworks word processor files. I figured out a lot about the file format, but it still has a long way to go. You can view my current documenting status [here](http://wiki.terrencecurran.com/x/index.php/AppleWorks_/_ClarisWorks) and download source for the parser on [GitHub](https://github.com/teacurran/appleworks-parser).
 
 The parser so far can read:
 
@@ -32,6 +32,6 @@ I may not touch it again for another year, but who knows.
 
 [![output of parse](/blog/wp-content/uploads/2013/01/parse_output-300x273.png)](/blog/wp-content/uploads/2013/01/parse_output.png)
 
-[![](/img/famfamicons/icons/link.png)](http://wiki.wirelust.com/x/index.php/AppleWorks_/_ClarisWorks) [Link to file format research](http://wiki.wirelust.com/x/index.php/AppleWorks_/_ClarisWorks)
+[![](/img/famfamicons/icons/link.png)](http://wiki.terrencecurran.com/x/index.php/AppleWorks_/_ClarisWorks) [Link to file format research](http://wiki.terrencecurran.com/x/index.php/AppleWorks_/_ClarisWorks)
 
 [![](/img/famfamicons/icons/page_white_put.png)](https://github.com/teacurran/appleworks-parser) [Download source code at GitHub](https://github.com/teacurran/appleworks-parser)

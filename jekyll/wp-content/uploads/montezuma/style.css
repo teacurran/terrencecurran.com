@@ -1,7 +1,7 @@
 
 
-.row, .row5, .lw { width: 960px; margin: 0 auto; } 
-.row > div, .row5 > div, .row > nav, .row5 > nav { float: left; position: relative; } 
+.row, .row5, .lw { width: 960px; margin: 0 auto; }
+.row > div, .row5 > div, .row > nav, .row5 > nav { float: left; position: relative; }
 
 
 .col1 {width:80px}		.col2 {width:160px}		.col3 {width:240px}		.col4 {width:320px}
@@ -11,7 +11,7 @@
 
 .push1 {left:80px}		.push2 {left:160px}		.push3 {left:240px}		.push4 {left:320px}
 .push5 {left:400px}		.push6 {left:480px}		.push7 {left:560px}		.push8 {left:640px}
-.push9 {left:720px}		.push10 {left:800px}		.push11 {left:880px}		
+.push9 {left:720px}		.push10 {left:800px}		.push11 {left:880px}
 .pull1 {right:80px}		.pull2 {right:160px}		.pull3 {right:240px}		.pull4 {right:320px}
 .pull5 {right:400px}		.pull6 {right:480px}		.pull7 {right:560px}		.pull8 {right:640px}
 .pull9 {right:720px}		.pull10 {right:800px}	.pull11 {right:880px}
@@ -48,37 +48,37 @@
 
 
 
-@media only screen and (max-width: 767px) {		
+@media only screen and (max-width: 767px) {
 body { width: 100%; min-width: 0; margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; }
 
 .row, .row5, .lw { width: 100%; min-width: 0; margin-left: 0; margin-right: 0; }
 .row > div, .row5 > div { margin: 0 !important; float: none !important }
 
 
-.col1, .col2, .col3, .col4, .col5, .col6, 
+.col1, .col2, .col3, .col4, .col5, .col6,
 .col7, .col8, .col9, .col10, .col11, .col12,
 .row5 > div	{ width:100% !important; }
-	
 
-.push1, .push2, .push3, .push4, .push5, .push6, 
-.push7, .push8, .push9, .push10, .push11, .push12 { left:auto !important; } 
-.pull1, .pull2, .pull3, .pull4, .pull5, .pull6, 
-.pull7, .pull8, .pull9, .pull10, .pull11, .pull12 { right:auto !important; } 
+
+.push1, .push2, .push3, .push4, .push5, .push6,
+.push7, .push8, .push9, .push10, .push11, .push12 { left:auto !important; }
+.pull1, .pull2, .pull3, .pull4, .pull5, .pull6,
+.pull7, .pull8, .pull9, .pull10, .pull11, .pull12 { right:auto !important; }
 }
 
 
 
-* { 
-	-moz-box-sizing: 		border-box; 
-	-webkit-box-sizing: 	border-box; 
-	box-sizing: 			border-box;	
+* {
+	-moz-box-sizing: 		border-box;
+	-webkit-box-sizing: 	border-box;
+	box-sizing: 			border-box;
 	o-box-sizing: 			border-box;
 }
 
-.row, .lw { 
-	-moz-box-sizing: 		content-box; 
-	-webkit-box-sizing: 	content-box; 
-	box-sizing: 			content-box;	
+.row, .lw {
+	-moz-box-sizing: 		content-box;
+	-webkit-box-sizing: 	content-box;
+	box-sizing: 			content-box;
 	o-box-sizing: 			content-box;
 }
 
@@ -86,33 +86,33 @@ body { width: 100%; min-width: 0; margin-left: 0; margin-right: 0; padding-left:
 
 
 body {
-	margin: 					0; 
-	padding: 				0; 
+	margin: 					0;
+	padding: 				0;
 	font-family: 			"Segoe UI", "Lucida Grande", "Helvetica Neue", sans-serif;
 	font-size: 				15px;
-	opacity: 				0; 
+	opacity: 				0;
 }
 
 
 
 
-article, aside, details, 
-figcaption, figure, footer, 
-header, hgroup, menu, 
-nav, section { 
-	display: 				block; 
+article, aside, details,
+figcaption, figure, footer,
+header, hgroup, menu,
+nav, section {
+	display: 				block;
 }
 
 
 
 
-a  { 
-	color: 					#0090d3; 
-	text-decoration: 		none; 
+a  {
+	color: 					#0090d3;
+	text-decoration: 		none;
 }
 
-a:hover 	{ 
-	text-decoration: 		underline; 
+a:hover 	{
+	text-decoration: 		underline;
 }
 
 a:active { }
@@ -123,8 +123,8 @@ a:visited { }
 .widget a,
 .singlenav a,
 .commentlist a,
-.logged-in-as a  { 
-	border-bottom: 		dotted 2px transparent; 
+.logged-in-as a  {
+	border-bottom: 		dotted 2px transparent;
 }
 
 .post-bodycopy a:hover,
@@ -134,14 +134,14 @@ a:visited { }
 .logged-in-as a:hover {
 	border-bottom-color: #0090d3;
 	text-decoration: 		none;
-	color: 					#0090d3;	
+	color: 					#0090d3;
 }
 
 
 
 
 a,
-.widget > h3, 
+.widget > h3,
 .widget > h3 i,
 .ed_button,
 #submit,
@@ -154,14 +154,14 @@ a,
 	-webkit-transition: 	all 0.5s ease-out;
 	-moz-transition: 		all 0.5s ease-out;
 	-o-transition: 		all 0.5s ease-out;
-}	
+}
 
 
 
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 			'Yanone Kaffeesatz', sans-serif;
-	font-weight: 			normal; 
+	font-weight: 			normal;
 	margin: 					20px 0 10px 0;
 }
 
@@ -190,36 +190,36 @@ a img { border: none; }
 }
 
 .wp-caption img {
-	background: 			#fff; 
-	padding: 				10px; 
+	background: 			#fff;
+	padding: 				10px;
 	border: 					solid 2px #cccccc;
 }
 
-.wp-caption-text 	{ 
+.wp-caption-text 	{
 	color:					#999999;
-	font-size: 				14px; 
-	text-align: 			center; 
-	padding: 				5px; 
-	margin-bottom:			0; 
+	font-size: 				14px;
+	text-align: 			center;
+	padding: 				5px;
+	margin-bottom:			0;
 }
 
 iframe .player-container {
 	border: 					solid 3px #000000;
 }
 
-.alignleft { 
-	float: 					left; 
-	margin: 					5px 15px 10px 0; 
+.alignleft {
+	float: 					left;
+	margin: 					5px 15px 10px 0;
 }
 
-.alignright { 
-	float: 					right; 
-	margin: 					5px 0 10px 15px; 
+.alignright {
+	float: 					right;
+	margin: 					5px 0 10px 15px;
 }
 
-.aligncenter { 
-	display: 				block; 
-	margin: 					0 auto; 
+.aligncenter {
+	display: 				block;
+	margin: 					0 auto;
 }
 
 .gallery-caption {
@@ -239,31 +239,31 @@ body.single .hentry img {
 	word-wrap: 				break-word;
 }
 
-input, 
+input,
 textarea {
 	max-width: 				100%;
 }
 
-img { 
-	max-width: 				100%; 
-	height: 					auto; 
+img {
+	max-width: 				100%;
+	height: 					auto;
 	display: 				block;
-	width: 					auto; 
+	width: 					auto;
 }
 
 img.wp-smiley {
-	display: 				inline; 
+	display: 				inline;
 }
 
 .wp-caption {
-	max-width: 				100% !important; 	
-	width: 					auto; 
+	max-width: 				100% !important;
+	width: 					auto;
 	height: 					auto;
 }
 
 embed {
-	max-width: 				100% !important; 	
-	border: 					none; 
+	max-width: 				100% !important;
+	border: 					none;
 	height: 					auto;
 }
 
@@ -273,7 +273,7 @@ embed {
 
 .hentry ul,
 .comment-text ul {
-	list-style: 			none; 
+	list-style: 			none;
 	margin: 					10px 0;
 	padding-left:			25px;
 }
@@ -287,22 +287,22 @@ embed {
 .hentry ul li i,
 .comment-text ul li i {
 	display: 				inline-block;
-	width: 					12px; 
-	height: 					12px; 
-	margin-right: 			10px; 
+	width: 					12px;
+	height: 					12px;
+	margin-right: 			10px;
 	margin-left: 			-20px;
-	background: 			transparent url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/icons.png) -48px -84px no-repeat;
+	background: 			transparent url(http://www.an.com/blog/wp-content/themes/montezuma/images/icons.png) -48px -84px no-repeat;
 }
 
 .hentry ul ul li i,
 .comment-text ul ul li i {
-	background: 			transparent url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/icons.png) 0px -48px no-repeat;
+	background: 			transparent url(http://www.an.com/blog/wp-content/themes/montezuma/images/icons.png) 0px -48px no-repeat;
 }
 
 .hentry ul ul,
 .comment-text ul ul {
-	margin-top: 			2px; 
-	margin-bottom: 		3px; 
+	margin-top: 			2px;
+	margin-bottom: 		3px;
 	margin-left: 			0px;
 	padding-left:			22px;
 }
@@ -312,43 +312,43 @@ embed {
 
 
 .hentry ol,
-.comment-text ol { 
-	margin: 					0; 
-	padding: 				0 0 0 35px; 
+.comment-text ol {
+	margin: 					0;
+	padding: 				0 0 0 35px;
 	list-style: 			decimal;
 }
 
 .hentry ol li,
-.comment-text ol li { 
-	margin-bottom: 		5px; 
+.comment-text ol li {
+	margin-bottom: 		5px;
 }
 
 .hentry ol ol,
-.comment-text ol ol { 
-	list-style: 			lower-roman; 
+.comment-text ol ol {
+	list-style: 			lower-roman;
 }
 
 .hentry ol ol ol,
-.comment-text ol ol ol { 
-	list-style: 			lower-alpha; 
+.comment-text ol ol ol {
+	list-style: 			lower-alpha;
 }
 
 
 
 
 .hentry dl,
-.comment-text dl { 
+.comment-text dl {
 	margin:					20px 0;
 }
 
 .hentry dt,
-.comment-text dt { 
-	font-weight: 			bold; 
+.comment-text dt {
+	font-weight: 			bold;
 	margin:					10px 0;
 }
 
 .hentry dd,
-.comment-text dd { 
+.comment-text dd {
 	margin-left:			0;
 	padding-left:			20px;
 }
@@ -365,16 +365,16 @@ embed {
 
 .hentry  table caption,
 .comment-text table caption {
-	color: 					#707070; 
-	font-size: 				14px; 
+	color: 					#707070;
+	font-size: 				14px;
 	letter-spacing: 		1px;
-	text-transform: 		uppercase; 
+	text-transform: 		uppercase;
 	padding: 				4px;
 }
 
 .hentry  table th,
 .comment-text table th {
-	padding: 				6px 8px 6px 9px; 
+	padding: 				6px 8px 6px 9px;
 	text-align: 			left;
 }
 
@@ -408,7 +408,7 @@ blockquote p {
 
 pre {
 	padding:				10px;
-	border:				dashed 1px #cccccc; 
+	border:				dashed 1px #cccccc;
 }
 
 
@@ -416,7 +416,7 @@ pre {
 
 
 
-#banner-bg 	{ 
+#banner-bg 	{
 }
 
 
@@ -437,77 +437,77 @@ pre {
 
 
 
-#main 	{ 
+#main 	{
 	padding: 				30px 0;
 }
 
 
-#widgetarea-one {  
-	padding: 				0 20px;
-}	
-
-
-#content{ 
+#widgetarea-one {
 	padding: 				0 20px;
 }
 
 
-#footer-bg { 
-	background: 			#fcfcfc; 
-	padding: 				30px 0; 
+#content{
+	padding: 				0 20px;
+}
+
+
+#footer-bg {
+	background: 			#fcfcfc;
+	padding: 				30px 0;
 	border-top: 			solid 1px #ddd;
 }
 
 
-#footer { 
+#footer {
 	text-align: 			center;
 	color:					#666666;
 }
 
 .hentry {
-	position: 				relative; 
+	position: 				relative;
 	padding: 				30px 0 25px 0;
 	border-top: 			solid 1px #eee;
 }
 
 
-.hentry:first-child { 
-	border-top: 			none; 
+.hentry:first-child {
+	border-top: 			none;
 }
 
 
-.hentry a { 
-	color: 					#0090d3; 
-	text-decoration: 		none; 
-}
-
-
-
-
-.hentry > h1, 
-.hentry > h2 { 
-	margin: 					0; 
-	font-weight: 			normal; 
-}
-
-.hentry > h2 { 
-	font-size: 				40px; 
-	line-height: 			38px; 
-	margin: 					0 0 15px 0; 
-}
-
-
-.hentry > h1 { 
+.hentry a {
 	color: 					#0090d3;
-	font-size: 				50px; 
-	line-height: 			45px; 
-	margin: 					0 0 20px 0; 
+	text-decoration: 		none;
+}
+
+
+
+
+.hentry > h1,
+.hentry > h2 {
+	margin: 					0;
+	font-weight: 			normal;
+}
+
+.hentry > h2 {
+	font-size: 				40px;
+	line-height: 			38px;
+	margin: 					0 0 15px 0;
+}
+
+
+.hentry > h1 {
+	color: 					#0090d3;
+	font-size: 				50px;
+	line-height: 			45px;
+	margin: 					0 0 20px 0;
 }
 
 .hentry h2 a .firstpart,
-.hentry h1 .firstpart  { 
-	color: 					#000000; 
-	text-decoration: 		none; 
+.hentry h1 .firstpart  {
+	color: 					#000000;
+	text-decoration: 		none;
 }
 
 
@@ -517,65 +517,65 @@ pre {
 
 .post-format {
 	display: 				none;
-	background: 			url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/icons.png) -120px -144px no-repeat;
-	width: 					24px; 
+	background: 			url(http://www.an.com/blog/wp-content/themes/montezuma/images/icons.png) -120px -144px no-repeat;
+	width: 					24px;
 	height: 					24px;
 	padding: 				5px 13px;
-	margin: 					0 10px 0 0; 
+	margin: 					0 10px 0 0;
 	vertical-align: 		8px;
-	font-size: 				10px; 
+	font-size: 				10px;
 
 }
 
 
- 
+
 
 .hentry .comment-bubble {
 	display: 				inline-block;
-	height: 					36px; 
+	height: 					36px;
 	width: 					36px;
-	color: 					#999; 
-	line-height: 			27px; 
+	color: 					#999;
+	line-height: 			27px;
 	font-family: 			arial, sans-serif;
 	font-size: 				18px;
-	font-weight: 			bold; 
-	text-align: 			center; 
-	background: 			url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/icons.png) -168px -108px no-repeat;
-	margin-left: 			8px; 
+	font-weight: 			bold;
+	text-align: 			center;
+	background: 			url(http://www.an.com/blog/wp-content/themes/montezuma/images/icons.png) -168px -108px no-repeat;
+	margin-left: 			8px;
 	vertical-align: 		8px;
 }
 
 
 .hentry:hover .comment-bubble {
-	color: 					#fff; 
-	background: 			url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/icons.png) -168px -72px no-repeat;
+	color: 					#fff;
+	background: 			url(http://www.an.com/blog/wp-content/themes/montezuma/images/icons.png) -168px -72px no-repeat;
 	text-decoration: 		none;
 }
 
 
 
 
-.thumb-shadow { 
-	background: 			#fff url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/shadow.png) center 50px no-repeat;	
+.thumb-shadow {
+	background: 			#fff url(http://www.an.com/blog/wp-content/themes/montezuma/images/shadow.png) center 50px no-repeat;
 	padding-bottom: 		5px;
 	margin-top: 			7px;
 	margin-left: 			-6px;
 }
 
-.hentry:hover .thumb-shadow { 
+.hentry:hover .thumb-shadow {
 	background-position: center bottom;
 }
 
-.post-thumb { 
-	margin: 					0 auto 15px auto; 
-	display: 				block; 
+.post-thumb {
+	margin: 					0 auto 15px auto;
+	display: 				block;
 	padding: 				6px 6px 5px 6px;
 	border: 					solid 1px #ddd;
 	border-bottom: 		solid 1px #ccc;
 	background: 			#ffffff;
 }
 
-.post-thumb a { 
+.post-thumb a {
 	position: 				relative;
 	display: 				block;
 }
@@ -586,38 +586,38 @@ pre {
 
 .post-thumb img {
 	-webkit-filter: 		grayscale(0);
-	opacity: 				0; 
-	filter: 					alpha(opacity=0); 
+	opacity: 				0;
+	filter: 					alpha(opacity=0);
 	-ms-filter: 			"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 	display:					block;
 }
 
-.post-thumb img.img_grayscale { 
-	filter: 					grayscale(100%); 
-	-ms-filter: 			grayscale(100%); 
-	-o-filter: 				grayscale(100%);  
-	filter: 					url("http://www.wirelust.com/blog/wp-content/themes/montezuma/images/gray-filter.svg#grayscale"); 
-	filter: 					gray; 
-	-webkit-filter: 		grayscale(1); 
-	-webkit-filter: 		grayscale(100%); 
+.post-thumb img.img_grayscale {
+	filter: 					grayscale(100%);
+	-ms-filter: 			grayscale(100%);
+	-o-filter: 				grayscale(100%);
+	filter: 					url("http://www.an.com/blog/wp-content/themes/montezuma/images/gray-filter.svg#grayscale");
+	filter: 					gray;
+	-webkit-filter: 		grayscale(1);
+	-webkit-filter: 		grayscale(100%);
 }
 
 
 .post-thumb span {
 	position: 				absolute;
-	top: 						0; 
+	top: 						0;
 	bottom: 					0;
-	left: 					0; 
+	left: 					0;
 	right: 					0;
-	box-shadow: 			inset 15px 15px 20px -20px #000; 
+	box-shadow: 			inset 15px 15px 20px -20px #000;
 	z-index: 				20000;
 }
 
 
 
 
-.post-bodycopy { 
-	 
+.post-bodycopy {
+
 }
 .post-bodycopy p {
 
@@ -635,7 +635,7 @@ p.post-pagination {
 p.post-pagination ol {
 	margin: 15px 0;
 }
-p.post-pagination a { 
+p.post-pagination a {
 
 }
 
@@ -650,36 +650,36 @@ p.post-pagination a {
 
 
 .post-date {
-	border-right: 			solid 1px #999; 
+	border-right: 			solid 1px #999;
 	float: 					left;
 	text-align: 			center;
-	margin-right: 			10px; 
+	margin-right: 			10px;
 	margin-top: 			4px;
 	margin-bottom: 		8px;
-	padding-right: 		10px; 
+	padding-right: 		10px;
 }
 
-.post-day { 
-	font-size: 				20px; 
-	line-height: 			20px; 
-	margin: 					4px auto 0px auto; 
+.post-day {
+	font-size: 				20px;
+	line-height: 			20px;
+	margin: 					4px auto 0px auto;
 }
 
-.post-month { 
-	font-size: 				14px; 
-	line-height: 			14px; 
-	margin:					0px auto; 
-	text-transform: 		uppercase; 
+.post-month {
+	font-size: 				14px;
+	line-height: 			14px;
+	margin:					0px auto;
+	text-transform: 		uppercase;
 }
-.post-year { 
-	font-size: 11px; 
-	line-height: 14px; 
-	margin: 0px auto; 
+.post-year {
+	font-size: 11px;
+	line-height: 14px;
+	margin: 0px auto;
 }
 
 
 
- 
+
 .post-footer {
 	color: 					#bbbbbb;
 	margin-top: 			10px;
@@ -703,36 +703,36 @@ p.post-pagination a {
 }
 
 
-.post-tags, 
-.post-categories  { 
-	margin: 					0; 
+.post-tags,
+.post-categories  {
+	margin: 					0;
 	display: 				inline-block;
 }
 
-.post-tags  { 
+.post-tags  {
 	margin-left: 			20px;
 
 }
 
 
-.post-tags i, 
+.post-tags i,
 .post-categories i {
-	display: 				inline-block; 
-	width: 					12px; 
+	display: 				inline-block;
+	width: 					12px;
 	height: 					12px;
 	margin-right: 			5px;
-	background-image: 	url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/icons.png);
+	background-image: 	url(http://www.an.com/blog/wp-content/themes/montezuma/images/icons.png);
 }
 
-.post-tags i { 
-	background-position: -168px -192px; 
+.post-tags i {
+	background-position: -168px -192px;
 }
 
-.post-categories i { 
-	background-position: -12px -228px; 
+.post-categories i {
+	background-position: -12px -228px;
 }
 
-.post-readmore { 
+.post-readmore {
 	float: 					right;
 	margin-top: 			-5px;
 }
@@ -740,19 +740,19 @@ p.post-pagination a {
 
 
 .gallery {
-	margin:					20px 0 10px -7px;  
+	margin:					20px 0 10px -7px;
 }
 
 .gallery figure {
 	display:					inline-block;
 	padding: 				7px;
 	border:					solid 1px #ccc;
-	margin:					0 10px 5px 0; 
+	margin:					0 10px 5px 0;
 	box-shadow: 			0 0 10px -5px #ccc;
 }
 
 .gallery figure a {
-	position:				relative; 
+	position:				relative;
 	display: 				block;
 	border:					0;
 	text-decoration:		none;
@@ -761,27 +761,27 @@ p.post-pagination a {
 
 .gallery figure a span {
 	position: 				absolute;
-	top: 						0; 
+	top: 						0;
 	bottom: 					0;
-	left: 					0; 
+	left: 					0;
 	right: 					0;
-	box-shadow: 			inset 15px 15px 20px -20px #000; 
+	box-shadow: 			inset 15px 15px 20px -20px #000;
 	z-index: 				1000;
 }
 .ie8 .gallery figure a span {
 	background:				#fff;
-	-ms-filter:				"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+	-ms-filter:				"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	filter: 					alpha(opacity=0);
 }
 .ie8 .gallery figure {
-	margin:					0 10px 10px 0; 
+	margin:					0 10px 10px 0;
 }
 
 
 
 .hentry .gallery figure a img {
-	border:					0; 
-	padding:					0; 
+	border:					0;
+	padding:					0;
 }
 
 
@@ -797,10 +797,10 @@ p.post-pagination a {
 	margin: 10px 0;
 }
 .image-attachment .singlenav .older a:before {
-	content: '\2039\2039 \00a0';  
+	content: '\2039\2039 \00a0';
 }
 .image-attachment .singlenav .newer a:after {
-	content: '\00a0 \203a\203a'; 
+	content: '\00a0 \203a\203a';
 }
 
 
@@ -817,23 +817,23 @@ p.post-pagination a {
 .cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none;}
 .cboxIframe{width:100%; height:100%; display:block; border:0;}
 #colorbox, #cboxContent, #cboxLoadedContent{
-	-moz-box-sizing:content-box; -webkit-box-sizing:content-box; 
+	-moz-box-sizing:content-box; -webkit-box-sizing:content-box;
 	box-sizing:content-box; o-box-sizing:content-box;
 }
 
 
 #cboxOverlay{background:#fff;}
 #colorbox{}
-	
-    #cboxTopLeft{width:25px; height:25px; background:url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/colorbox/border1.png) no-repeat 0 0;}
-    #cboxTopCenter{height:25px; background:url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/colorbox/border1.png) repeat-x 0 -50px;}
-    #cboxTopRight{width:25px; height:25px; background:url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/colorbox/border1.png) no-repeat -25px 0;}
-    #cboxBottomLeft{width:25px; height:25px; background:url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/colorbox/border1.png) no-repeat 0 -25px;}
-    #cboxBottomCenter{height:25px; background:url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/colorbox/border1.png) repeat-x 0 -75px;}
-    #cboxBottomRight{width:25px; height:25px; background:url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/colorbox/border1.png) no-repeat -25px -25px;}
-    #cboxMiddleLeft{width:25px; background:url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/colorbox/border2.png) repeat-y 0 0;}
-    #cboxMiddleRight{width:25px; background:url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/colorbox/border2.png) repeat-y -25px 0;}
-	 
+
+    #cboxTopLeft{width:25px; height:25px; background:url(http://www.an.com/blog/wp-content/themes/montezuma/images/colorbox/border1.png) no-repeat 0 0;}
+    #cboxTopCenter{height:25px; background:url(http://www.an.com/blog/wp-content/themes/montezuma/images/colorbox/border1.png) repeat-x 0 -50px;}
+    #cboxTopRight{width:25px; height:25px; background:url(http://www.an.com/blog/wp-content/themes/montezuma/images/colorbox/border1.png) no-repeat -25px 0;}
+    #cboxBottomLeft{width:25px; height:25px; background:url(http://www.an.com/blog/wp-content/themes/montezuma/images/colorbox/border1.png) no-repeat 0 -25px;}
+    #cboxBottomCenter{height:25px; background:url(http://www.an.com/blog/wp-content/themes/montezuma/images/colorbox/border1.png) repeat-x 0 -75px;}
+    #cboxBottomRight{width:25px; height:25px; background:url(http://www.an.com/blog/wp-content/themes/montezuma/images/colorbox/border1.png) no-repeat -25px -25px;}
+    #cboxMiddleLeft{width:25px; background:url(http://www.an.com/blog/wp-content/themes/montezuma/images/colorbox/border2.png) repeat-y 0 0;}
+    #cboxMiddleRight{width:25px; background:url(http://www.an.com/blog/wp-content/themes/montezuma/images/colorbox/border2.png) repeat-y -25px 0;}
+
     #cboxContent{background:#fff; overflow:hidden;}
         .cboxIframe{background:#fff;}
         #cboxError{padding:50px; border:1px solid #ccc;}
@@ -843,7 +843,7 @@ p.post-pagination a {
         #cboxSlideshow{position:absolute; bottom:0px; right:42px; color:#444;}
         #cboxPrevious{position:absolute; bottom:0px; left:0; color:#444;}
         #cboxNext{position:absolute; bottom:0px; left:63px; color:#444;}
-        #cboxLoadingOverlay{background:#fff url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/colorbox/loading.gif) no-repeat 5px 5px;}
+        #cboxLoadingOverlay{background:#fff url(http://www.an.com/blog/wp-content/themes/montezuma/images/colorbox/loading.gif) no-repeat 5px 5px;}
         #cboxClose{position:absolute; bottom:0; right:0; display:block; color:#444;}
 
 
@@ -869,7 +869,7 @@ p.post-pagination a {
 }
 
 
-.widget:hover { 
+.widget:hover {
   	color: 				#000000;
 }
 
@@ -877,12 +877,12 @@ p.post-pagination a {
 
 
 
-.widget a { 
+.widget a {
   	color: 				#000000;
 }
 
 
-.widget:hover a { 
+.widget:hover a {
   	color: 				#0090d3;
 }
 
@@ -892,13 +892,13 @@ p.post-pagination a {
 
 .widget > h3 {
 	color: 				#0090d3;
-	margin: 				0 0 15px 0; 
+	margin: 				0 0 15px 0;
 	font-size:			32px;
 	line-height: 		29px;
 }
 
 
-.widget:hover > h3 { 
+.widget:hover > h3 {
   	color: 				#000000;
 }
 
@@ -919,10 +919,10 @@ p.post-pagination a {
 	height: 				24px;
 	margin-right: 		15px;
 	background-color: #ffffff;
-	background-image: url( http://www.wirelust.com/blog/wp-content/themes/montezuma/images/icons.png );
+	background-image: url( http://www.an.com/blog/wp-content/themes/montezuma/images/icons.png );
 }
 
- 
+
 .widget > h3 i 						{ background-position: -120px -216px }
 .widget_archive > h3 i 				{ background-position: -120px -24px }
 .widget_tag_cloud > h3 i 			{ background-position: -120px 0px }
@@ -933,7 +933,7 @@ p.post-pagination a {
 .widget_meta > h3 i 					{ background-position: -120px -192px }
 .widget_categories > h3 i 			{ background-position: -120px -168px }
 
- 
+
 .widget:hover > h3 i 						{ background-position: -96px -216px }
 .widget_archive:hover > h3 i 				{ background-position:  -96px -24px }
 .widget_tag_cloud:hover > h3 i 			{ background-position:  -96px 0px }
@@ -957,8 +957,8 @@ p.post-pagination a {
 }
 
 
-.widget > ul { 
-  	border-top: 			solid 1px #eeeeee 
+.widget > ul {
+  	border-top: 			solid 1px #eeeeee
 }
 
 
@@ -975,9 +975,9 @@ p.post-pagination a {
 }
 
 
- 
+
 .widget > ul > li:before {
-	content: '\203a \00a0\00a0'; 
+	content: '\203a \00a0\00a0';
 	margin-left: -10px;
 }
 .widget > ul  > li {
@@ -986,20 +986,20 @@ p.post-pagination a {
 
 
 
-.widget li:hover { 
-  	background: 			#f7f7f7 
+.widget li:hover {
+  	background: 			#f7f7f7
 }
 
 
-.widget_categories > ul > li, 
-.widget_archive li, 
+.widget_categories > ul > li,
+.widget_archive li,
 .widget_meta li {
 	float: 					left;
 	width: 					50%;
 }
-@media only screen and (max-width: 959px) {	
-.widget_categories > ul > li, 
-.widget_archive li, 
+@media only screen and (max-width: 959px) {
+.widget_categories > ul > li,
+.widget_archive li,
 .widget_meta li {
 	float: 					none;
 	width: 					auto;
@@ -1015,9 +1015,9 @@ p.post-pagination a {
 	font-size: 			13px;
 	padding: 			2px 6px 4px 6px;
 	border-radius: 	2px;
-	white-space: 		nowrap; 
+	white-space: 		nowrap;
 	margin: 				0 3px 6px 0;
-	color: 				#333333; 
+	color: 				#333333;
 	border: 				solid 1px #ddd;
 	background: 		#fcfcfc;
 	display: 			inline-block;
@@ -1043,8 +1043,8 @@ p.post-pagination a {
 
 
 #wp-calendar {
-	border-collapse: 		separate; 
-	line-height: 			20px; 
+	border-collapse: 		separate;
+	line-height: 			20px;
 	width: 					100%;
 	text-align: 			center;
 }
@@ -1135,66 +1135,66 @@ p.post-pagination a {
 #next {
 }
 
- 
+
 .menu-wrapper {
-	position: 				relative; 
+	position: 				relative;
 }
 
 
 .menu {
-	list-style-type: 		none; 
-	line-height: 			33px; 
-	margin: 					0; 
+	list-style-type: 		none;
+	line-height: 			33px;
+	margin: 					0;
 	padding: 				0;
 }
 
 
 .menu ul {
-	float: 					left; 
-	height: 					auto; 
-	left: 					-999em; 
+	float: 					left;
+	height: 					auto;
+	left: 					-999em;
 	position: 				absolute;
 }
 
 
 .menu ul ul {
-	margin-top: 			-33px; 
-	margin-left: 			150px; 
+	margin-top: 			-33px;
+	margin-left: 			150px;
 }
 
-.menu li { 
-	float: 					left; 
-	padding: 				0; 
-	margin: 					0; 
-	width: 					auto; 
+.menu li {
+	float: 					left;
+	padding: 				0;
+	margin: 					0;
+	width: 					auto;
 	display: 				block;
 }
 
-.menu ul li { 
-	float: 					none; 
-	width: 					100%; 
+.menu ul li {
+	float: 					none;
+	width: 					100%;
 }
 
-.menu a, 
-#menu1-smooth a, 
-#menu2-smooth a  { 
-	display: 				block; 
-	padding: 				0 8px; 
-	text-decoration: 		none; 
-	white-space: 			nowrap; 
-	width: 					auto;  
+.menu a,
+#menu1-smooth a,
+#menu2-smooth a  {
+	display: 				block;
+	padding: 				0 8px;
+	text-decoration: 		none;
+	white-space: 			nowrap;
+	width: 					auto;
 }
 
-.menu ul a, 
-#menu1-smooth a, 
-#menu2-smooth a { 
-	width: 					150px; 
-	white-space: 			normal; 
+.menu ul a,
+#menu1-smooth a,
+#menu2-smooth a {
+	width: 					150px;
+	white-space: 			normal;
 }
 
 
 .menu li:hover ul ul ,
-.menu li:hover ul ul ul, 
+.menu li:hover ul ul ul,
 .menu li:hover ul ul ul ul,
 .menu li:hover ul ul ul ul ul,
 .menu li:hover ul ul ul ul ul ul,
@@ -1203,16 +1203,16 @@ p.post-pagination a {
 }
 
 
-.menu li:hover ul, 
-.menu li li:hover ul, 
+.menu li:hover ul,
+.menu li li:hover ul,
 .menu li li li:hover ul,
 .menu li li li li:hover ul ,
 .menu li li li li li:hover ul,
 .menu li li li li li li:hover ul,
 .menu li li li li li li li:hover ul,
 .menu li li li li li li li li:hover ul {
-	left: 					auto; 
-	z-index: 				100000; 
+	left: 					auto;
+	z-index: 				100000;
 }
 
 
@@ -1221,15 +1221,15 @@ p.post-pagination a {
 #menu1-wrapper {
 	z-index: 				1000;
 	background: 			#ffffff;
-	
-	
+
+
 	position: 				absolute;
 	bottom: 					0;
 	right:					0;
-	
-	
+
+
 	border-bottom: 		solid 1px #cccccc;
-	margin-bottom: 		-1px; 
+	margin-bottom: 		-1px;
 }
 
 @media only screen and (max-width: 959px) {
@@ -1239,14 +1239,14 @@ p.post-pagination a {
 }
 
 
-#menu1, 
+#menu1,
 #menu1-smooth  {
-	display: 				table; 
-	margin: 					0 auto; 
+	display: 				table;
+	margin: 					0 auto;
 }
 
 #menu1 > li {
-	background: 			transparent url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/menuline.png) 0 center no-repeat; 
+	background: 			transparent url(http://www.an.com/blog/wp-content/themes/montezuma/images/menuline.png) 0 center no-repeat;
 	box-shadow: 			2px 4px 20px -18px #000;
 }
 
@@ -1255,18 +1255,18 @@ p.post-pagination a {
 }
 
 
-#menu1 > li > a > i { 
+#menu1 > li > a > i {
 	display:					block;
 	width: 					24px;
 	height: 					24px;
 	margin: 					0 auto 5px auto;
-	background: 			transparent url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/menu-icons-0090d3.png) 0 0 no-repeat; 
+	background: 			transparent url(http://www.an.com/blog/wp-content/themes/montezuma/images/menu-icons-0090d3.png) 0 0 no-repeat;
 }
 
-#menu1 > li:hover > a > i { 
-	background: 			transparent url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/menu-icons-0090d3.png) -24px 0 no-repeat; 
+#menu1 > li:hover > a > i {
+	background: 			transparent url(http://www.an.com/blog/wp-content/themes/montezuma/images/menu-icons-0090d3.png) -24px 0 no-repeat;
 }
-	
+
 #menu1 .page-blog > a > i 					{ background-position: 0px 0px ; }
 #menu1 .page-contact-us > a > i 			{ background-position: 0px -24px; }
 #menu1 .page-features > a > i 			{ background-position: 0px -48px ; }
@@ -1286,18 +1286,18 @@ p.post-pagination a {
 #menu1 .page-wordpress-themes:hover > a > i 	{ background-position: -24px -168px; }
 
 
-#menu1 a, 
-#menu1-smooth a { 
+#menu1 a,
+#menu1-smooth a {
 	font-family: 			'Yanone Kaffeesatz', sans-serif;
-	font-size: 				22px; 
+	font-size: 				22px;
 	font-weight: 			300;
-	color: 					#000; 
-	padding: 				12px 15px 20px 15px; 
+	color: 					#000;
+	padding: 				12px 15px 20px 15px;
 	line-height: 			22px;
 }
 
-#menu1 ul a, #menu1-smooth a { 
-	font-size: 				18px; 
+#menu1 ul a, #menu1-smooth a {
+	font-size: 				18px;
 }
 
 
@@ -1306,59 +1306,59 @@ p.post-pagination a {
 }
 
 
-#menu1 a:hover, 
+#menu1 a:hover,
 #menu1-smooth a:hover,
-#menu1 .active a, 
-#menu1-smooth .active a { 
-	color: 					#0090d3; 
+#menu1 .active a,
+#menu1-smooth .active a {
+	color: 					#0090d3;
 }
 
 
-#menu1 > li { 
-	border-top: 			solid 5px transparent; 
+#menu1 > li {
+	border-top: 			solid 5px transparent;
 }
 
 
 #menu1 > li:hover,
 #menu1 > li.active ,
-#menu1 > li.ancestor { 
+#menu1 > li.ancestor {
 	border-top: 			solid 5px #0090d3;
 }
 
 
-#menu1 .sub-menu, 
+#menu1 .sub-menu,
 #menu1-smooth .sub-menu {
 	list-style: 			none;
-	background:				#ffffff; 
+	background:				#ffffff;
 	background: 			hsla(36, 100%, 100%, 0.95);
 	border: 					solid 1px #ddd;
-	font-size: 				18px; 
+	font-size: 				18px;
 	padding: 				5px 15px;
 	box-shadow: 			5px 5px 20px -15px #000;
 }
 
-#menu1 .sub-menu a, 
-#menu1-smooth .sub-menu a { 
+#menu1 .sub-menu a,
+#menu1-smooth .sub-menu a {
 	padding: 				5px 0;
 }
 
-#menu1 > ul > li > ul { 
+#menu1 > ul > li > ul {
 	margin-left: 			-20px;
 }
 
 
-#menu1 .sub-menu li, 
-#menu1-smooth .sub-menu li { 
+#menu1 .sub-menu li,
+#menu1-smooth .sub-menu li {
 	border-top: 			solid 1px #eee;
 }
-#menu1 .sub-menu li:first-child, 
-#menu1-smooth .sub-menu li:first-child { 
+#menu1 .sub-menu li:first-child,
+#menu1-smooth .sub-menu li:first-child {
 	border-top: 			none;
 }
 
-#menu1 .sub-menu .sub-menu, 
+#menu1 .sub-menu .sub-menu,
 #menu1-smooth .sub-menu .sub-menu li:first-child {
-	margin-top: 			-38px; 
+	margin-top: 			-38px;
 }
 
 
@@ -1380,19 +1380,19 @@ p.post-pagination a {
 }
 
 @media only screen and (max-width: 767px) {
-	
+
 	ul#menu1,
 	a.rsslink,
 	img.avatar,
 	.post-categories i	{
 		display: 				none;
 	}
-	
+
 
 	.menu1-mobile {
 		display:					block;
 	}
-	
+
 	.commentlist li > div {
 		margin-left: 			0 !important;
 	}
@@ -1430,28 +1430,28 @@ p.post-pagination a {
 	}
 }
 
- 
-#menu2-bg { 
-	background: 			#fcfcfc; 
+
+#menu2-bg {
+	background: 			#fcfcfc;
 	border-bottom: 		solid 1px #dddddd;
 	margin-bottom: 		10px;
 }
 
 
-#menu2 > li > a { 
+#menu2 > li > a {
 	padding: 				2px 8px;
 }
 
 
-#menu2 a { 
-	color: 					#333333; 
+#menu2 a {
+	color: 					#333333;
 }
 
 
-#menu2 a:hover, 
+#menu2 a:hover,
 #menu2 .active a,
-#menu2 .active a  { 
-	color: 					#0090d3; 
+#menu2 .active a  {
+	color: 					#0090d3;
 }
 
 
@@ -1462,21 +1462,21 @@ p.post-pagination a {
 	box-shadow: 			5px 5px 20px -15px #000000;
 }
 
-#menu2 ul a { 
+#menu2 ul a {
 	padding: 				0;
 }
 
 
-#menu2 ul li { 
+#menu2 ul li {
 	border-top: 			solid 1px #eeeeee;
 }
 
-#menu2 ul li:first-child { 
+#menu2 ul li:first-child {
 	border-top: 			none;
 }
 
 #menu2 ul ul {
-	margin-top: 			-39px; 
+	margin-top: 			-39px;
 }
 
 .singlenav {
@@ -1530,9 +1530,9 @@ p.post-pagination a {
 
 #multinav1 a,
 #multinav1 span  {
-	margin-bottom: 		-1px; 
+	margin-bottom: 		-1px;
 	border-top-right-radius: 5px;
-	border-top-left-radius: 5px;	
+	border-top-left-radius: 5px;
 }
 
 #multinav1 .current {
@@ -1545,9 +1545,9 @@ p.post-pagination a {
 }
 #multinav2 a,
 #multinav2 span  {
-	margin-top: 			-1px; 
+	margin-top: 			-1px;
 	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;	
+	border-bottom-left-radius: 5px;
 }
 #multinav2 .current {
 	border-top: 			solid 1px #ffffff;
@@ -1588,12 +1588,12 @@ p.post-pagination a {
 	display: 				block;
 	width: 					12px;
 	height: 					12px;
-	background: 			transparent url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/icons.png) -36px -108px no-repeat;
+	background: 			transparent url(http://www.an.com/blog/wp-content/themes/montezuma/images/icons.png) -36px -108px no-repeat;
 	margin: 					8px 15px 0 5px;
 }
 
 .breadcrumbs ol li.bc-home a:hover {
-	background: 			transparent url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/icons.png) -48px -108px no-repeat;
+	background: 			transparent url(http://www.an.com/blog/wp-content/themes/montezuma/images/icons.png) -48px -108px no-repeat;
 	text-decoration: 		none;
 }
 
@@ -1603,7 +1603,7 @@ p.post-pagination a {
 	float: 					right;
 	width: 					17px;
 	height: 					32px;
-	background: 			transparent url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/breadcr-arr.png) center left no-repeat;
+	background: 			transparent url(http://www.an.com/blog/wp-content/themes/montezuma/images/breadcr-arr.png) center left no-repeat;
 }
 
 #breadcrumbs1 {
@@ -1647,13 +1647,13 @@ p.post-pagination a {
 }
 
 .commentlist li {
-	padding: 				0px; 
+	padding: 				0px;
 }
 
 .commentlist li > div {
 	border: 					solid 1px #dddddd;
 	background: 			#fcfcfc;
-	padding: 				20px 20px 3px 20px; 
+	padding: 				20px 20px 3px 20px;
 	position: 				relative;
 	margin-bottom: 		20px;
 	margin-left: 			85px;
@@ -1669,7 +1669,7 @@ p.post-pagination a {
 }
 
 .commentlist li > div:before {
-	content: 				url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/commentarrow.png);
+	content: 				url(http://www.an.com/blog/wp-content/themes/montezuma/images/commentarrow.png);
 	left: 					-17px;
 	top: 						25px;
 	position: 				absolute;
@@ -1677,7 +1677,7 @@ p.post-pagination a {
 }
 
 .commentlist li > div:hover:before {
-    content: 				url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/commentarrow-white.png);
+    content: 				url(http://www.an.com/blog/wp-content/themes/montezuma/images/commentarrow-white.png);
 }
 
 
@@ -1688,7 +1688,7 @@ p.post-pagination a {
 	top: 						3px;
 	left: 					-80px;
 	border-radius: 		50%;
-	box-shadow: 			0 0 0 3px #cccccc; 
+	box-shadow: 			0 0 0 3px #cccccc;
 }
 
 
@@ -1700,19 +1700,19 @@ p.post-pagination a {
 
 
 .comment-reply-link {
-	position: 				absolute; 
-	top: 						60px; 
-	left: 					-80px; 
-	font-size: 				13px; 
-	width: 					50px; 
+	position: 				absolute;
+	top: 						60px;
+	left: 					-80px;
+	font-size: 				13px;
+	width: 					50px;
 	text-align: 			center;
 	color: 					#cccccc;
 }
 
 
 li li .comment-reply-link {
-	top: 						45px; 
-	left: 					-70px; 
+	top: 						45px;
+	left: 					-70px;
 }
 
 
@@ -1768,7 +1768,7 @@ li li .comment-reply-link {
 	margin-top: 			10px;
 }
 
-.comment-pagination a, 
+.comment-pagination a,
 .comment-pagination .current  {
 	border: 					solid 1px #dddddd;
 	padding: 				3px 12px;
@@ -1907,15 +1907,15 @@ li li .comment-reply-link {
 
 #sitetitle {
 	font-family: 			'Yanone Kaffeesatz', sans-serif;
-	font-size:				70px; 
-	font-weight: 			normal; 
+	font-size:				70px;
+	font-weight: 			normal;
 	margin:					25px auto 10px auto;
-	line-height:			55px; 
-	
+	line-height:			55px;
+
 }
 @media only screen and (max-width: 959px) {
 	#sitetitle {
-		display: 				table; 
+		display: 				table;
 	}
 }
 
@@ -1931,26 +1931,26 @@ li li .comment-reply-link {
 #tagline {
 	font-family: 			'Yanone Kaffeesatz', sans-serif;
 	font-weight: 			200;
-	font-size: 				26px; 
+	font-size: 				26px;
 	letter-spacing: 		0px;
-	color: 					#4f4f4f; 
+	color: 					#4f4f4f;
 	margin: 					0 auto 20px auto;
 }
 @media only screen and (max-width: 959px) {
 	#tagline {
-		display: 			table; 
+		display: 			table;
 	}
 }
 
 
 a.rsslink {
-	position: 				absolute; 
-	top: 						60px; 
+	position: 				absolute;
+	top: 						60px;
 	right: 					30px;
-	width: 					24px; 
-	height: 					24px; 
+	width: 					24px;
+	height: 					24px;
 	display: 				block;
-	background-image: 	url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/icons.png);
+	background-image: 	url(http://www.an.com/blog/wp-content/themes/montezuma/images/icons.png);
 	background-position: -120px -48px;
 }
 
@@ -1959,8 +1959,8 @@ a.rsslink {
 }
 
 a.rsscommentslink {
-	float: 					right; 
-	margin-top: 			5px; 
+	float: 					right;
+	margin-top: 			5px;
 	margin-right: 			8px;
 }
 
@@ -1974,7 +1974,7 @@ a.rsscommentslink {
 .searchform .submit {
 	width: 					28px;
 	height: 					28px;
-	background: 			url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/searchicon.png) 0 -5px no-repeat;
+	background: 			url(http://www.an.com/blog/wp-content/themes/montezuma/images/searchicon.png) 0 -5px no-repeat;
 	overflow: 				hidden;
 	border: 					none;
 	margin-left: 			3px;
@@ -1986,8 +1986,8 @@ a.rsscommentslink {
 	width: 					90%;
 }
 #post-0 .searchform .field {
-	width: 					95%; 
-	max-width: 				100%; 
+	width: 					95%;
+	max-width: 				100%;
 }
 
 
@@ -2002,16 +2002,16 @@ a.rsscommentslink {
 }
 
 .widget .searchform .field {
-	width: 					100%; 
-	max-width: 				300px; 
-	background: 			url(http://www.wirelust.com/blog/wp-content/themes/montezuma/images/searchicon.png) right center no-repeat;
+	width: 					100%;
+	max-width: 				300px;
+	background: 			url(http://www.an.com/blog/wp-content/themes/montezuma/images/searchicon.png) right center no-repeat;
 }
 
 
 .page-title {
-	color: 					#999999; 
-	font-size: 				24px; 
-	margin: 					10px 0; 
+	color: 					#999999;
+	font-size: 				24px;
+	margin: 					10px 0;
 }
 
 .page-title span {
@@ -2039,35 +2039,35 @@ a.rsscommentslink {
 .row:before, .row:after,
 .row:before, .row:after,
 .lw:before, .lw:after {
-  	content: "."; 
-  	display: block; 
-  	height: 0; 
-  	clear: both; 
+  	content: ".";
+  	display: block;
+  	height: 0;
+  	clear: both;
   	visibility: hidden;
 	}
 
-.sub-menu:after, 
-.cf:after, 
-.row:after, 
-.row20:after, 
+.sub-menu:after,
+.cf:after,
+.row:after,
+.row20:after,
 .lw:after {
-  	clear: both; 
+  	clear: both;
 	}
 
-.sub-menu,	
-.cf, 
-.row, 
-.row20, 
+.sub-menu,
+.cf,
+.row,
+.row20,
 .lw {
-	min-width: 0;		
+	min-width: 0;
 	display: inline-block;
-		display: block;	
+		display: block;
 	}
 
-* html .sub-menu,	
-* html .cf, 
-* html .row, 
-* html .row20, 
+* html .sub-menu,
+* html .cf,
+* html .row,
+* html .row20,
 * html .lw {
-	  height: 1%;	 
+	  height: 1%;
 	}

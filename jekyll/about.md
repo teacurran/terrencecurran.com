@@ -11,12 +11,13 @@ aktt_notify_twitter:
 Freelance developer in northern Vermont.
 
 other places I might post content:
-- [Approaching Pi](http://www.approachingpi.com)
+- [Mostly Cats](https://www.mostlycats.org/)
+- [Approaching Pi](https://approachingpi.com/)
 - [Facebook](http://www.facebook.com/terrencecurran)
 - [Instagram](https://www.instagram.com/teacurran/)
 
 some very old stuff:
-- [Grilled Cheese](http://www.grilledcheese.com)
+- [Grilled Cheese](http://grilledcheese.com)
 - [DISTRO.Y](http://www.distroy.com)
 - [Twitter](http://www.twitter.com/teacurran)
 - [Livejournal](http://notequalto.livejournal.com/)

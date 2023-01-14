@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jnlp codebase="http://www.wirelust.com/apps/PicturePump" href="launch.jnlp" spec="1.0+">
+<jnlp codebase="http://www.terrencecurran.com/apps/PicturePump" href="launch.jnlp" spec="1.0+">
     <information>
         <title>PicturePump</title>
         <vendor>Approaching Pi</vendor>
-        <homepage href="http://www.wirelust.com"/>
+        <homepage href="http://www.terrencecurran.com"/>
         <description>PicturePump</description>
         <description kind="short">PicturePump</description>
     <offline-allowed/>

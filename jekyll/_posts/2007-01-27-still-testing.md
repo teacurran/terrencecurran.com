@@ -4,7 +4,7 @@ title: 'Still Testing'
 date: 2007-01-27 16:59:23
 author: Tea
 layout: post
-guid: 'http://wirelust.com/blog/2007/06/08/still-testing/'
+guid: 'http://terrencecurran.com/blog/2007/06/08/still-testing/'
 permalink: /2007/01/27/still-testing/
 dsq_thread_id:
     - '672299485'

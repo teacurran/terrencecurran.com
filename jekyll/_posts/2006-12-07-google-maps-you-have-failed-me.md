@@ -4,7 +4,7 @@ title: 'Google Maps You Have Failed Me'
 date: 2006-12-07 17:37:03
 author: Tea
 layout: post
-guid: 'http://wirelust.com/blog/2006/12/07/google-maps-you-have-failed-me/'
+guid: 'http://terrencecurran.com/blog/2006/12/07/google-maps-you-have-failed-me/'
 permalink: /2006/12/07/google-maps-you-have-failed-me/
 dsq_thread_id:
     - '475679840'

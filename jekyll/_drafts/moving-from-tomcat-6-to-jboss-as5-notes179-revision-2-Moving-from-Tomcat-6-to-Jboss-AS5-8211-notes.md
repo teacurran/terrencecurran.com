@@ -14,12 +14,12 @@ Assuming this is your tomcat config file:
 %TOMCAT\_HOME%/conf/server.xml:
 
 ```xml
-<span style="color: #009900;"><span style="font-weight: bold; color: black;"><Host</span> <span style="color: #000066;">appBase</span>=<span style="color: #ff0000;">"/home/wirelust/wirelust.com"</span> <span style="color: #000066;">autoDeploy</span>=<span style="color: #ff0000;">"false"</span>
+<span style="color: #009900;"><span style="font-weight: bold; color: black;"><Host</span> <span style="color: #000066;">appBase</span>=<span style="color: #ff0000;">"/home/wirelust/terrencecurran.com"</span> <span style="color: #000066;">autoDeploy</span>=<span style="color: #ff0000;">"false"</span>
      <span style="color: #000066;">debug</span>=<span style="color: #ff0000;">"0"</span> <span style="color: #000066;">deployXML</span>=<span style="color: #ff0000;">"true"</span> <span style="color: #000066;">liveDeploy</span>=<span style="color: #ff0000;">"true"</span>
      <span style="color: #000066;">name</span>=<span style="color: #ff0000;">"domainname.com"</span>
      <span style="color: #000066;">unpackWARs</span>=<span style="color: #ff0000;">"true"</span><span style="font-weight: bold; color: black;">></span></span>
  
-    <span style="color: #009900;"><span style="font-weight: bold; color: black;"><Alias<span style="font-weight: bold; color: black;">></span></span></span>www.wirelust.com<span style="color: #009900;"><span style="font-weight: bold; color: black;"></Alias<span style="font-weight: bold; color: black;">></span></span></span>
+    <span style="color: #009900;"><span style="font-weight: bold; color: black;"><Alias<span style="font-weight: bold; color: black;">></span></span></span>www.terrencecurran.com<span style="color: #009900;"><span style="font-weight: bold; color: black;"></Alias<span style="font-weight: bold; color: black;">></span></span></span>
  
      <span style="color: #009900;"><span style="font-weight: bold; color: black;"><Context</span> <span style="color: #000066;">cachingAllowed</span>=<span style="color: #ff0000;">"true"</span> <span style="color: #000066;">cookies</span>=<span style="color: #ff0000;">"true"</span> <span style="color: #000066;">crossContext</span>=<span style="color: #ff0000;">"true"</span> <span style="color: #000066;">debug</span>=<span style="color: #ff0000;">"0"</span>
              <span style="color: #000066;">displayName</span>=<span style="color: #ff0000;">"wirelust"</span> <span style="color: #000066;">docBase</span>=<span style="color: #ff0000;">"."</span> <span style="color: #000066;">path</span>=<span style="color: #ff0000;">""</span> <span style="color: #000066;">privileged</span>=<span style="color: #ff0000;">"false"</span>
@@ -28,7 +28,7 @@ Assuming this is your tomcat config file:
                      <span style="color: #000066;">username</span>=<span style="color: #ff0000;">"username"</span>
                      <span style="color: #000066;">password</span>=<span style="color: #ff0000;">"password"</span>
                      <span style="color: #000066;">driverClassName</span>=<span style="color: #ff0000;">"net.sourceforge.jtds.jdbc.Driver"</span>
-                     <span style="color: #000066;">url</span>=<span style="color: #ff0000;">"jdbc:jtds:sqlserver://sql.wirelust.com/database"</span>
+                     <span style="color: #000066;">url</span>=<span style="color: #ff0000;">"jdbc:jtds:sqlserver://sql.terrencecurran.com/database"</span>
                      <span style="color: #000066;">removeAbandoned</span>=<span style="color: #ff0000;">"true"</span>
                      <span style="color: #000066;">removeAbandonedTimeout</span>=<span style="color: #ff0000;">"30"</span>
                      <span style="color: #000066;">logAbandoned</span>=<span style="color: #ff0000;">"true"</span>
@@ -41,12 +41,12 @@ Becomes the embedded tomcat config file:
 %JBOSS\_HOME%/server/default/deploy/jbossweb.sar/server.xml
 
 ```xml
-<span style="color: #009900;"><span style="font-weight: bold; color: black;"><Host</span> <span style="color: #000066;">appBase</span>=<span style="color: #ff0000;">"/home/wirelust/deploy/wirelust.com.war"</span> <span style="color: #000066;">autoDeploy</span>=<span style="color: #ff0000;">"false"</span>
+<span style="color: #009900;"><span style="font-weight: bold; color: black;"><Host</span> <span style="color: #000066;">appBase</span>=<span style="color: #ff0000;">"/home/wirelust/deploy/terrencecurran.com.war"</span> <span style="color: #000066;">autoDeploy</span>=<span style="color: #ff0000;">"false"</span>
      <span style="color: #000066;">debug</span>=<span style="color: #ff0000;">"0"</span> <span style="color: #000066;">deployXML</span>=<span style="color: #ff0000;">"true"</span> <span style="color: #000066;">liveDeploy</span>=<span style="color: #ff0000;">"true"</span>
      <span style="color: #000066;">name</span>=<span style="color: #ff0000;">"domainname.com"</span>
      <span style="color: #000066;">unpackWARs</span>=<span style="color: #ff0000;">"true"</span><span style="font-weight: bold; color: black;">></span></span>
  
-    <span style="color: #009900;"><span style="font-weight: bold; color: black;"><Alias<span style="font-weight: bold; color: black;">></span></span></span>www.wirelust.com<span style="color: #009900;"><span style="font-weight: bold; color: black;"></Alias<span style="font-weight: bold; color: black;">></span></span></span>
+    <span style="color: #009900;"><span style="font-weight: bold; color: black;"><Alias<span style="font-weight: bold; color: black;">></span></span></span>www.terrencecurran.com<span style="color: #009900;"><span style="font-weight: bold; color: black;"></Alias<span style="font-weight: bold; color: black;">></span></span></span>
 <span style="color: #009900;"><span style="font-weight: bold; color: black;"></Host<span style="font-weight: bold; color: black;">></span></span></span>
 ```
 
@@ -80,7 +80,7 @@ Then in that new deploy directory, create a datasource file, in this case called
 <span style="color: #009900;"><span style="font-weight: bold; color: black;"><datasources<span style="font-weight: bold; color: black;">></span></span></span>
     <span style="color: #009900;"><span style="font-weight: bold; color: black;"><local</span>-tx-datasource<span style="font-weight: bold; color: black;">></span></span>
         <span style="color: #009900;"><span style="font-weight: bold; color: black;"><jndi</span>-name<span style="font-weight: bold; color: black;">></span></span>wirelustDatasource<span style="color: #009900;"><span style="font-weight: bold; color: black;"></jndi</span>-name<span style="font-weight: bold; color: black;">></span></span>
-        <span style="color: #009900;"><span style="font-weight: bold; color: black;"><connection</span>-url<span style="font-weight: bold; color: black;">></span></span>jdbc:jtds:sqlserver://sql.wirelust.com/wirelust<span style="color: #009900;"><span style="font-weight: bold; color: black;"></connection</span>-url<span style="font-weight: bold; color: black;">></span></span>
+        <span style="color: #009900;"><span style="font-weight: bold; color: black;"><connection</span>-url<span style="font-weight: bold; color: black;">></span></span>jdbc:jtds:sqlserver://sql.terrencecurran.com/wirelust<span style="color: #009900;"><span style="font-weight: bold; color: black;"></connection</span>-url<span style="font-weight: bold; color: black;">></span></span>
         <span style="color: #009900;"><span style="font-weight: bold; color: black;"><use</span>-java-context<span style="font-weight: bold; color: black;">></span></span>false<span style="color: #009900;"><span style="font-weight: bold; color: black;"></use</span>-java-context<span style="font-weight: bold; color: black;">></span></span>
         <span style="color: #009900;"><span style="font-weight: bold; color: black;"><driver</span>-class<span style="font-weight: bold; color: black;">></span></span>net.sourceforge.jtds.jdbc.Driver<span style="color: #009900;"><span style="font-weight: bold; color: black;"></driver</span>-class<span style="font-weight: bold; color: black;">></span></span>
         <span style="color: #009900;"><span style="font-weight: bold; color: black;"><user</span>-name<span style="font-weight: bold; color: black;">></span></span>username<span style="color: #009900;"><span style="font-weight: bold; color: black;"></user</span>-name<span style="font-weight: bold; color: black;">></span></span>
@@ -100,7 +100,7 @@ In order to bind to the correct virtual host, you have to create a new file in y
  
 <span style="color: #009900;"><span style="font-weight: bold; color: black;"><jboss</span>-web<span style="font-weight: bold; color: black;">></span></span>  
     <span style="color: #009900;"><span style="font-weight: bold; color: black;"><context</span>-root<span style="font-weight: bold; color: black;">></span></span>/<span style="color: #009900;"><span style="font-weight: bold; color: black;"></context</span>-root<span style="font-weight: bold; color: black;">></span></span>  
-    <span style="color: #009900;"><span style="font-weight: bold; color: black;"><virtual</span>-host<span style="font-weight: bold; color: black;">></span></span>wirelust.com<span style="color: #009900;"><span style="font-weight: bold; color: black;"></virtual</span>-host<span style="font-weight: bold; color: black;">></span></span>
+    <span style="color: #009900;"><span style="font-weight: bold; color: black;"><virtual</span>-host<span style="font-weight: bold; color: black;">></span></span>terrencecurran.com<span style="color: #009900;"><span style="font-weight: bold; color: black;"></virtual</span>-host<span style="font-weight: bold; color: black;">></span></span>
 <span style="color: #009900;"><span style="font-weight: bold; color: black;"></jboss</span>-web<span style="font-weight: bold; color: black;">></span></span>
 ```
 

@@ -23,7 +23,7 @@ Feel free to email me with questions about anything I post.
 - [Twitter](http://www.twitter.com/teacurran)
 - [MySpace](http://www.myspace.com/teacurran)
 - [Flickr](http://www.flickr.com/photos/teacurran/)
-- [Grilled Cheese](http://www.grilledcheese.com)
+- [Grilled Cheese](http://grilledcheese.com)
 - [Livejournal](http://notequalto.livejournal.com/)
 - [Approaching Pi](http://www.approachingpi.com)
 - [DISTRO.Y](http://www.distroy.com)

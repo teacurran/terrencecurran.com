@@ -14,12 +14,12 @@ Assuming this is your tomcat config file:
 %TOMCAT\_HOME%/conf/server.xml:
 
 ```xml
-<span style="font-weight: bold; color: black;"><Host appBase="/home/wirelust/wirelust.com" autoDeploy="false"
+<span style="font-weight: bold; color: black;"><Host appBase="/home/wirelust/terrencecurran.com" autoDeploy="false"
      debug="0" deployXML="true" liveDeploy="true"
      name="domainname.com"
      unpackWARs="true"></span>
  
-    <span style="font-weight: bold; color: black;"><Alias<span style="font-weight: bold; color: black;">></span></span>www.wirelust.com<span style="font-weight: bold; color: black;"></Alias<span style="font-weight: bold; color: black;">></span></span>
+    <span style="font-weight: bold; color: black;"><Alias<span style="font-weight: bold; color: black;">></span></span>www.terrencecurran.com<span style="font-weight: bold; color: black;"></Alias<span style="font-weight: bold; color: black;">></span></span>
  
      <span style="font-weight: bold; color: black;"><Context cachingAllowed="true" cookies="true" crossContext="true" debug="0"
              displayName="wirelust" docBase="." path="" privileged="false"
@@ -28,7 +28,7 @@ Assuming this is your tomcat config file:
                      username="username"
                      password="password"
                      driverClassName="net.sourceforge.jtds.jdbc.Driver"
-                     url="jdbc:jtds:sqlserver://sql.wirelust.com/database"
+                     url="jdbc:jtds:sqlserver://sql.terrencecurran.com/database"
                      removeAbandoned="true"
                      removeAbandonedTimeout="30"
                      logAbandoned="true"
@@ -41,12 +41,12 @@ Becomes the embedded tomcat config file:
 %JBOSS\_HOME%/server/default/deploy/jbossweb.sar/server.xml
 
 ```xml
-<span style="font-weight: bold; color: black;"><Host appBase="/home/wirelust/deploy/wirelust.com.war" autoDeploy="false"
+<span style="font-weight: bold; color: black;"><Host appBase="/home/wirelust/deploy/terrencecurran.com.war" autoDeploy="false"
      debug="0" deployXML="true" liveDeploy="true"
      name="domainname.com"
      unpackWARs="true"></span>
  
-    <span style="font-weight: bold; color: black;"><Alias<span style="font-weight: bold; color: black;">></span></span>www.wirelust.com<span style="font-weight: bold; color: black;"></Alias<span style="font-weight: bold; color: black;">></span></span>
+    <span style="font-weight: bold; color: black;"><Alias<span style="font-weight: bold; color: black;">></span></span>www.terrencecurran.com<span style="font-weight: bold; color: black;"></Alias<span style="font-weight: bold; color: black;">></span></span>
 <span style="font-weight: bold; color: black;"></Host<span style="font-weight: bold; color: black;">></span></span>
 ```
 
@@ -80,7 +80,7 @@ Then in that new deploy directory, create a datasource file, in this case called
 <span style="font-weight: bold; color: black;"><datasources<span style="font-weight: bold; color: black;">></span></span>
     <span style="font-weight: bold; color: black;"><local-tx-datasource></span>
         <span style="font-weight: bold; color: black;"><jndi-name></span>wirelustDatasource<span style="font-weight: bold; color: black;"></jndi-name></span>
-        <span style="font-weight: bold; color: black;"><connection-url></span>jdbc:jtds:sqlserver://sql.wirelust.com/wirelust<span style="font-weight: bold; color: black;"></connection-url></span>
+        <span style="font-weight: bold; color: black;"><connection-url></span>jdbc:jtds:sqlserver://sql.terrencecurran.com/wirelust<span style="font-weight: bold; color: black;"></connection-url></span>
         <span style="font-weight: bold; color: black;"><use-java-context></span>false<span style="font-weight: bold; color: black;"></use-java-context></span>
         <span style="font-weight: bold; color: black;"><driver-class></span>net.sourceforge.jtds.jdbc.Driver<span style="font-weight: bold; color: black;"></driver-class></span>
         <span style="font-weight: bold; color: black;"><user-name></span>username<span style="font-weight: bold; color: black;"></user-name></span>
@@ -100,7 +100,7 @@ In order to bind to the correct virtual host, you have to create a new file in y
  
 <span style="font-weight: bold; color: black;"><jboss-web></span>  
     <span style="font-weight: bold; color: black;"><context-root></span>/<span style="font-weight: bold; color: black;"></context-root></span>  
-    <span style="font-weight: bold; color: black;"><virtual-host></span>wirelust.com<span style="font-weight: bold; color: black;"></virtual-host></span>
+    <span style="font-weight: bold; color: black;"><virtual-host></span>terrencecurran.com<span style="font-weight: bold; color: black;"></virtual-host></span>
 <span style="font-weight: bold; color: black;"></jboss-web></span>
 ```
 
