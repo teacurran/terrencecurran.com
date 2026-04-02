@@ -4,9 +4,8 @@
  * and read environment variables instead.
  */
 import { S3Storage } from "emdash/storage/s3";
-import type { Storage } from "emdash/storage";
 
-export function createStorage(): Storage {
+export function createStorage() {
   const endpoint = process.env.S3_ENDPOINT;
   const bucket = process.env.S3_BUCKET;
   const accessKeyId = process.env.S3_ACCESS_KEY_ID;
