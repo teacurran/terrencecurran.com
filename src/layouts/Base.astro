@@ -217,7 +217,7 @@ const pageContext = page ? createPublicPageContext(page) : undefined;
     </style>
   </head>
   <body>
-    <EmDashBodyStart page={pageContext} />
+    {pageContext && <EmDashBodyStart page={pageContext} />}
     <header class="site-header">
       <div class="container">
         <a href="/" class="site-name">Terrence Curran</a>
@@ -236,6 +236,6 @@ const pageContext = page ? createPublicPageContext(page) : undefined;
         <p>© {new Date().getFullYear()} Terrence Curran</p>
       </div>
     </footer>
-    <EmDashBodyEnd page={pageContext} />
+    {pageContext && <EmDashBodyEnd page={pageContext} />}
   </body>
 </html>
