@@ -1,0 +1,99 @@
+{
+  "collection": "projects",
+  "entries": [
+    {
+      "title": "Scholastic Literacy Pro",
+      "slug": "scholastic-literacy-pro",
+      "client": "Scholastic Corporation",
+      "year": "2013-2016",
+      "status": "published",
+      "sort_order": 1,
+      "summary": "Educational application used by schools in over 70 countries to help children learn English. Uses a combination of adaptive assessment tests and gamified quizzes to track a child's reading level and progress throughout their educational career.",
+      "categories": ["Interactive"]
+    },
+    {
+      "title": "Coke Zero Facial Profiler",
+      "slug": "coke-zero-facial-profiler",
+      "client": "Coca-Cola / Crispin Porter + Bogusky",
+      "year": "2009",
+      "status": "published",
+      "sort_order": 2,
+      "summary": "Promotional web application that used a custom facial recognition algorithm to search millions of Facebook images and find people who look like the user. Ran on 1,000+ EC2 instances for processing."
+    },
+    {
+      "title": "2010 US Census",
+      "slug": "2010-us-census",
+      "client": "Jack Morton Worldwide",
+      "year": "2010",
+      "status": "published",
+      "sort_order": 3,
+      "summary": "Application used by the 2010 US Census road tour. Ran on a series of kiosks and billboards allowing visitors to learn about the census and record audio and video about what the census meant to them. Each truck uploaded data daily, and administrators used an editing application to prepare content pushed back to the trucks."
+    },
+    {
+      "title": "Nicky Digital",
+      "slug": "nicky-digital",
+      "client": "Nicky Digital",
+      "year": "2012",
+      "status": "published",
+      "sort_order": 4,
+      "summary": "Native iOS kiosk application for event photographer Nicky Digital. Ran on one or more kiosks at events, allowing attendees to view photos live as they were being shot and immediately share on Facebook, Twitter, Tumblr, or via email. Photos transferred wirelessly via WiFi and uploaded asynchronously. Collected demographic data and encouraged mailing list signups."
+    },
+    {
+      "title": "Coke Cheeers",
+      "slug": "coke-cheeers",
+      "client": "Wieden + Kennedy",
+      "year": "2012",
+      "status": "published",
+      "sort_order": 5,
+      "summary": "Promotional site where users were invited to use Coke to cheers another user of the opposing team. Used client-side object recognition to detect when users were holding a can of Coke to take the picture."
+    },
+    {
+      "title": "Silicon Valley Status",
+      "slug": "silicon-valley-status",
+      "client": "Bravo",
+      "year": "2012",
+      "status": "published",
+      "sort_order": 6,
+      "summary": "Promotional site for the show Start-Ups: Silicon-Valley on Bravo. Encouraged users to link their Facebook, Instagram, and Twitter accounts to receive a Klout-like influence score."
+    },
+    {
+      "title": "Rebif",
+      "slug": "rebif",
+      "client": "Cramer / EMD Serono",
+      "year": "2011",
+      "status": "published",
+      "sort_order": 7,
+      "summary": "Promotional site for the drug Rebif. Allowed users to register for more information, sign up for events, and update their status with the drug maker. Integrated with a custom-built lead tracking and event management system."
+    },
+    {
+      "title": "Able Bank",
+      "slug": "able-bank",
+      "client": "Able Bank",
+      "year": "2010",
+      "status": "published",
+      "sort_order": 8,
+      "summary": "Financial services web application for Able Bank, providing online banking interfaces and account management tools."
+    },
+    {
+      "title": "MS Lifelines",
+      "slug": "ms-lifelines",
+      "client": "EMD Serono",
+      "year": "2011",
+      "status": "published",
+      "sort_order": 9,
+      "summary": "Patient support platform for people living with multiple sclerosis. Connected patients with resources, community support, and disease management tools."
+    },
+    {
+      "title": "The Goodness",
+      "slug": "the-goodness",
+      "client": "The Goodness",
+      "year": "2010",
+      "status": "published",
+      "sort_order": 10,
+      "summary": "Social networking site for charitable giving. Users could follow and give credits, rewards, and donations to charities and interact with one another to encourage acts of goodness."
+    }
+  ],
+  "taxonomies": {
+    "categories": ["Interactive", "Web", "Mobile", "Kiosk"]
+  }
+}

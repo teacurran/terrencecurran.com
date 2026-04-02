@@ -1,0 +1,323 @@
+---
+- name: Deploy terrencecurran.com to K3s
+  hosts: k3s_cluster
+  gather_facts: no
+  become: no
+  vars:
+    image_tag: "{{ lookup('env', 'IMAGE_TAG') | default('beta-latest', true) }}"
+    registry_user: "{{ lookup('env', 'REGISTRY_USER') }}"
+    registry_password: "{{ lookup('env', 'REGISTRY_PASSWORD') }}"
+
+    # Database configuration
+    db_host: "{{ lookup('env', 'DB_HOST') }}"
+    db_port: "{{ lookup('env', 'DB_PORT') }}"
+    db_name: "{{ lookup('env', 'DB_NAME') }}"
+    db_user: "{{ lookup('env', 'DB_USER') }}"
+    db_password: "{{ lookup('env', 'DB_PASSWORD') }}"
+
+    # S3/R2 storage configuration
+    s3_endpoint: "{{ lookup('env', 'S3_ENDPOINT') }}"
+    s3_bucket: "{{ lookup('env', 'S3_BUCKET') }}"
+    s3_access_key_id: "{{ lookup('env', 'S3_ACCESS_KEY_ID') }}"
+    s3_secret_access_key: "{{ lookup('env', 'S3_SECRET_ACCESS_KEY') }}"
+    s3_region: "{{ lookup('env', 'S3_REGION') | default('auto', true) }}"
+    s3_public_url: "{{ lookup('env', 'S3_PUBLIC_URL') }}"
+
+    # EmDash secrets
+    emdash_auth_secret: "{{ lookup('env', 'EMDASH_AUTH_SECRET') }}"
+    emdash_preview_secret: "{{ lookup('env', 'EMDASH_PREVIEW_SECRET') }}"
+
+    # Kubernetes namespace (overridden by -e k8s_namespace=terrencecurran-production)
+    k8s_namespace: "terrencecurran-beta"
+
+    # Ingress hostname
+    ingress_host: "{{ lookup('env', 'INGRESS_HOST') | default('beta.terrencecurran.com', true) }}"
+
+    # Additional ingress hosts (optional, comma-separated)
+    ingress_hosts_extra: "{{ lookup('env', 'INGRESS_HOSTS_EXTRA') | default('', true) }}"
+
+    # Application configuration
+    app_name: "terrencecurran"
+    replicas: "{{ lookup('env', 'REPLICAS') | default('1', true) }}"
+
+  tasks:
+    - name: Check which kubectl command is available
+      shell: |
+        if command -v kubectl &> /dev/null; then
+          echo "kubectl"
+        elif [ -f /usr/local/bin/kubectl ]; then
+          echo "/usr/local/bin/kubectl"
+        else
+          echo "NONE"
+        fi
+      register: kubectl_cmd
+      changed_when: false
+
+    - name: Set kubectl command
+      set_fact:
+        kubectl: "{{ kubectl_cmd.stdout }}"
+
+    - name: Ensure namespace exists
+      shell: "{{ kubectl }} create namespace {{ k8s_namespace }} --dry-run=client -o yaml | {{ kubectl }} apply -f -"
+
+    - name: Create Docker registry secret
+      shell: |
+        {{ kubectl }} create secret docker-registry docker-registry-secret \
+          --docker-server=docker.io \
+          --docker-username='{{ registry_user }}' \
+          --docker-password='{{ registry_password }}' \
+          --namespace={{ k8s_namespace }} \
+          --dry-run=client -o yaml | {{ kubectl }} apply -f -
+      no_log: true
+
+    - name: Create database secret
+      shell: |
+        {{ kubectl }} create secret generic terrencecurran-db-secret \
+          --from-literal=db-host='{{ db_host }}' \
+          --from-literal=db-port='{{ db_port }}' \
+          --from-literal=db-name='{{ db_name }}' \
+          --from-literal=db-user='{{ db_user }}' \
+          --from-literal=db-password='{{ db_password }}' \
+          --namespace={{ k8s_namespace }} \
+          --dry-run=client -o yaml | {{ kubectl }} apply -f -
+      no_log: true
+
+    - name: Create S3 storage secret
+      shell: |
+        {{ kubectl }} create secret generic terrencecurran-storage-secret \
+          --from-literal=endpoint='{{ s3_endpoint }}' \
+          --from-literal=bucket='{{ s3_bucket }}' \
+          --from-literal=access-key-id='{{ s3_access_key_id }}' \
+          --from-literal=secret-access-key='{{ s3_secret_access_key }}' \
+          --from-literal=region='{{ s3_region }}' \
+          --from-literal=public-url='{{ s3_public_url }}' \
+          --namespace={{ k8s_namespace }} \
+          --dry-run=client -o yaml | {{ kubectl }} apply -f -
+      no_log: true
+
+    - name: Create EmDash secrets
+      shell: |
+        {{ kubectl }} create secret generic terrencecurran-emdash-secret \
+          --from-literal=auth-secret='{{ emdash_auth_secret }}' \
+          --from-literal=preview-secret='{{ emdash_preview_secret }}' \
+          --namespace={{ k8s_namespace }} \
+          --dry-run=client -o yaml | {{ kubectl }} apply -f -
+      no_log: true
+
+    - name: Generate Kubernetes manifest
+      copy:
+        dest: "~/terrencecurran-k8s-{{ k8s_namespace }}-{{ image_tag }}.yaml"
+        content: |
+          ---
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+            name: {{ app_name }}
+            namespace: {{ k8s_namespace }}
+            labels:
+              app: {{ app_name }}
+          spec:
+            replicas: {{ replicas }}
+            strategy:
+              type: RollingUpdate
+              rollingUpdate:
+                maxSurge: 1
+                maxUnavailable: 0
+            selector:
+              matchLabels:
+                app: {{ app_name }}
+            template:
+              metadata:
+                labels:
+                  app: {{ app_name }}
+              spec:
+                imagePullSecrets:
+                  - name: docker-registry-secret
+                containers:
+                  - name: {{ app_name }}
+                    image: {{ registry_user }}/terrencecurran:{{ image_tag }}
+                    imagePullPolicy: Always
+                    ports:
+                      - containerPort: 4321
+                        name: http
+                        protocol: TCP
+                    env:
+                      # Database - construct DATABASE_URL from parts
+                      - name: DB_USER
+                        valueFrom:
+                          secretKeyRef:
+                            name: terrencecurran-db-secret
+                            key: db-user
+                      - name: DB_PASSWORD
+                        valueFrom:
+                          secretKeyRef:
+                            name: terrencecurran-db-secret
+                            key: db-password
+                      - name: DB_HOST
+                        valueFrom:
+                          secretKeyRef:
+                            name: terrencecurran-db-secret
+                            key: db-host
+                      - name: DB_PORT
+                        valueFrom:
+                          secretKeyRef:
+                            name: terrencecurran-db-secret
+                            key: db-port
+                      - name: DB_NAME
+                        valueFrom:
+                          secretKeyRef:
+                            name: terrencecurran-db-secret
+                            key: db-name
+                      - name: DATABASE_URL
+                        value: "postgresql://$(DB_USER):$(DB_PASSWORD)@$(DB_HOST):$(DB_PORT)/$(DB_NAME)"
+
+                      # S3/R2 storage
+                      - name: S3_ENDPOINT
+                        valueFrom:
+                          secretKeyRef:
+                            name: terrencecurran-storage-secret
+                            key: endpoint
+                      - name: S3_BUCKET
+                        valueFrom:
+                          secretKeyRef:
+                            name: terrencecurran-storage-secret
+                            key: bucket
+                      - name: S3_ACCESS_KEY_ID
+                        valueFrom:
+                          secretKeyRef:
+                            name: terrencecurran-storage-secret
+                            key: access-key-id
+                      - name: S3_SECRET_ACCESS_KEY
+                        valueFrom:
+                          secretKeyRef:
+                            name: terrencecurran-storage-secret
+                            key: secret-access-key
+                      - name: S3_REGION
+                        valueFrom:
+                          secretKeyRef:
+                            name: terrencecurran-storage-secret
+                            key: region
+                      - name: S3_PUBLIC_URL
+                        valueFrom:
+                          secretKeyRef:
+                            name: terrencecurran-storage-secret
+                            key: public-url
+
+                      # EmDash auth
+                      - name: EMDASH_AUTH_SECRET
+                        valueFrom:
+                          secretKeyRef:
+                            name: terrencecurran-emdash-secret
+                            key: auth-secret
+                      - name: EMDASH_PREVIEW_SECRET
+                        valueFrom:
+                          secretKeyRef:
+                            name: terrencecurran-emdash-secret
+                            key: preview-secret
+
+                      # Server
+                      - name: HOST
+                        value: "0.0.0.0"
+                      - name: PORT
+                        value: "4321"
+
+                    resources:
+                      requests:
+                        memory: "256Mi"
+                        cpu: "100m"
+                      limits:
+                        memory: "512Mi"
+                        cpu: "500m"
+
+                    livenessProbe:
+                      httpGet:
+                        path: /health
+                        port: 4321
+                      initialDelaySeconds: 15
+                      periodSeconds: 10
+                      timeoutSeconds: 3
+                      failureThreshold: 3
+
+                    readinessProbe:
+                      httpGet:
+                        path: /health
+                        port: 4321
+                      initialDelaySeconds: 5
+                      periodSeconds: 5
+                      timeoutSeconds: 3
+                      failureThreshold: 3
+
+          ---
+          apiVersion: v1
+          kind: Service
+          metadata:
+            name: terrencecurran-service
+            namespace: {{ k8s_namespace }}
+            labels:
+              app: {{ app_name }}
+          spec:
+            type: ClusterIP
+            selector:
+              app: {{ app_name }}
+            ports:
+              - port: 80
+                targetPort: 4321
+                protocol: TCP
+                name: http
+
+          ---
+          apiVersion: networking.k8s.io/v1
+          kind: Ingress
+          metadata:
+            name: terrencecurran-ingress
+            namespace: {{ k8s_namespace }}
+            labels:
+              app: {{ app_name }}
+            annotations:
+              nginx.ingress.kubernetes.io/ssl-redirect: "true"
+              nginx.ingress.kubernetes.io/proxy-body-size: "50m"
+              nginx.ingress.kubernetes.io/use-forwarded-headers: "true"
+          spec:
+            ingressClassName: nginx
+            rules:
+              - host: {{ ingress_host }}
+                http:
+                  paths:
+                    - path: /
+                      pathType: Prefix
+                      backend:
+                        service:
+                          name: terrencecurran-service
+                          port:
+                            number: 80
+          {% if ingress_hosts_extra %}
+          {% for extra_host in ingress_hosts_extra.split(',') %}
+              - host: {{ extra_host | trim }}
+                http:
+                  paths:
+                    - path: /
+                      pathType: Prefix
+                      backend:
+                        service:
+                          name: terrencecurran-service
+                          port:
+                            number: 80
+          {% endfor %}
+          {% endif %}
+
+    - name: Apply Kubernetes manifest
+      shell: "{{ kubectl }} apply -f ~/terrencecurran-k8s-{{ k8s_namespace }}-{{ image_tag }}.yaml"
+
+    - name: Wait for deployment to be ready
+      shell: "{{ kubectl }} rollout status deployment/{{ app_name }} -n {{ k8s_namespace }} --timeout=5m"
+
+    - name: Get deployment status
+      shell: "{{ kubectl }} get pods -n {{ k8s_namespace }} -l app={{ app_name }}"
+      register: deployment_status
+
+    - name: Display deployment status
+      debug:
+        msg: "{{ deployment_status.stdout_lines }}"
+
+    - name: Clean up old manifest files
+      shell: "find ~ -name 'terrencecurran-k8s-*.yaml' -mmin +60 -delete 2>/dev/null || true"

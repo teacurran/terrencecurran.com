@@ -1,0 +1,74 @@
+{
+  "collections": [
+    {
+      "id": "posts",
+      "label": "Blog Posts",
+      "slug": "blog",
+      "fields": [
+        { "id": "title", "type": "string", "required": true },
+        { "id": "slug", "type": "string", "required": true },
+        { "id": "excerpt", "type": "text" },
+        { "id": "content", "type": "richtext", "required": true },
+        { "id": "featured_image", "type": "image" },
+        { "id": "date", "type": "datetime", "required": true }
+      ]
+    },
+    {
+      "id": "projects",
+      "label": "Projects",
+      "slug": "work",
+      "fields": [
+        { "id": "title", "type": "string", "required": true },
+        { "id": "slug", "type": "string", "required": true },
+        { "id": "client", "type": "string" },
+        { "id": "year", "type": "string" },
+        { "id": "summary", "type": "text", "required": true },
+        { "id": "content", "type": "richtext" },
+        { "id": "featured_image", "type": "image" },
+        { "id": "project_url", "type": "string" },
+        { "id": "sort_order", "type": "number" }
+      ]
+    },
+    {
+      "id": "pages",
+      "label": "Pages",
+      "slug": "pages",
+      "fields": [
+        { "id": "title", "type": "string", "required": true },
+        { "id": "slug", "type": "string", "required": true },
+        { "id": "content", "type": "richtext", "required": true }
+      ]
+    }
+  ],
+  "taxonomies": [
+    {
+      "id": "categories",
+      "label": "Categories",
+      "type": "category",
+      "collections": ["posts", "projects"]
+    },
+    {
+      "id": "tags",
+      "label": "Tags",
+      "type": "tag",
+      "collections": ["posts"]
+    }
+  ],
+  "menus": [
+    {
+      "id": "main",
+      "label": "Main Navigation",
+      "items": [
+        { "label": "Work", "url": "/work" },
+        { "label": "Blog", "url": "/blog" },
+        { "label": "About", "url": "/about" },
+        { "label": "Contact", "url": "/contact" }
+      ]
+    }
+  ],
+  "settings": {
+    "site_title": "Terrence Curran",
+    "site_description": "Software Engineering & Design",
+    "site_url": "https://terrencecurran.com"
+  }
+}
