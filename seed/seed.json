@@ -1,68 +1,72 @@
 {
+  "version": "1",
   "collections": [
     {
-      "id": "posts",
+      "slug": "posts",
       "label": "Blog Posts",
-      "slug": "blog",
+      "labelSingular": "Blog Post",
+      "urlPattern": "/blog/{slug}",
+      "supports": ["drafts", "revisions", "search", "seo"],
       "fields": [
-        { "id": "title", "type": "string", "required": true },
-        { "id": "slug", "type": "string", "required": true },
-        { "id": "excerpt", "type": "text" },
-        { "id": "content", "type": "richtext", "required": true },
-        { "id": "featured_image", "type": "image" },
-        { "id": "date", "type": "datetime", "required": true }
+        { "slug": "title", "label": "Title", "type": "string", "required": true },
+        { "slug": "excerpt", "label": "Excerpt", "type": "text" },
+        { "slug": "content", "label": "Content", "type": "portableText", "required": true },
+        { "slug": "featured_image", "label": "Featured Image", "type": "image" },
+        { "slug": "date", "label": "Date", "type": "datetime", "required": true }
       ]
     },
     {
-      "id": "projects",
+      "slug": "projects",
       "label": "Projects",
-      "slug": "work",
+      "labelSingular": "Project",
+      "urlPattern": "/work/{slug}",
+      "supports": ["drafts", "revisions", "search", "seo"],
       "fields": [
-        { "id": "title", "type": "string", "required": true },
-        { "id": "slug", "type": "string", "required": true },
-        { "id": "client", "type": "string" },
-        { "id": "year", "type": "string" },
-        { "id": "summary", "type": "text", "required": true },
-        { "id": "content", "type": "richtext" },
-        { "id": "featured_image", "type": "image" },
-        { "id": "project_url", "type": "string" },
-        { "id": "sort_order", "type": "number" }
+        { "slug": "title", "label": "Title", "type": "string", "required": true },
+        { "slug": "client", "label": "Client", "type": "string" },
+        { "slug": "year", "label": "Year", "type": "string" },
+        { "slug": "summary", "label": "Summary", "type": "text", "required": true },
+        { "slug": "content", "label": "Content", "type": "portableText" },
+        { "slug": "featured_image", "label": "Featured Image", "type": "image" },
+        { "slug": "project_url", "label": "Project URL", "type": "string" },
+        { "slug": "sort_order", "label": "Sort Order", "type": "number" }
       ]
     },
     {
-      "id": "pages",
-      "label": "Pages",
       "slug": "pages",
+      "label": "Pages",
+      "labelSingular": "Page",
+      "urlPattern": "/{slug}",
+      "supports": ["drafts", "revisions", "search", "seo"],
       "fields": [
-        { "id": "title", "type": "string", "required": true },
-        { "id": "slug", "type": "string", "required": true },
-        { "id": "content", "type": "richtext", "required": true }
+        { "slug": "title", "label": "Title", "type": "string", "required": true },
+        { "slug": "content", "label": "Content", "type": "portableText", "required": true }
       ]
     }
   ],
   "taxonomies": [
     {
-      "id": "categories",
+      "name": "categories",
       "label": "Categories",
-      "type": "category",
+      "hierarchical": true,
       "collections": ["posts", "projects"]
     },
     {
-      "id": "tags",
+      "name": "tags",
       "label": "Tags",
-      "type": "tag",
+      "hierarchical": false,
       "collections": ["posts"]
     }
   ],
   "menus": [
     {
-      "id": "main",
+      "name": "main",
       "label": "Main Navigation",
       "items": [
-        { "label": "Work", "url": "/work" },
-        { "label": "Blog", "url": "/blog" },
-        { "label": "About", "url": "/about" },
-        { "label": "Contact", "url": "/contact" }
+        { "type": "custom", "label": "Work", "url": "/work" },
+        { "type": "custom", "label": "Blog", "url": "/blog" },
+        { "type": "custom", "label": "About", "url": "/about" },
+        { "type": "custom", "label": "Contact", "url": "/contact" }
       ]
     }
   ],
