@@ -9,6 +9,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   output: "server",
+  server: {
+    allowedHosts: ["terrencecurran.com", "www.terrencecurran.com", "beta.terrencecurran.com"],
+  },
   adapter: node({
     mode: "standalone",
   }),
