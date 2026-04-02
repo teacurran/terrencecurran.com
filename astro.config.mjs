@@ -9,8 +9,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   output: "server",
-  server: {
-    allowedHosts: ["terrencecurran.com", "www.terrencecurran.com", "beta.terrencecurran.com"],
+  security: {
+    allowedDomains: [
+      { hostname: "terrencecurran.com", protocol: "https" },
+      { hostname: "www.terrencecurran.com", protocol: "https" },
+      { hostname: "beta.terrencecurran.com", protocol: "https" },
+    ],
   },
   adapter: node({
     mode: "standalone",
