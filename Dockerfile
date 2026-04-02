@@ -1,7 +1,7 @@
 ###
 # Stage 1: Build the Astro application
 ###
-FROM node:20-alpine AS build
+FROM node:22-alpine AS build
 
 WORKDIR /build
 
@@ -20,7 +20,7 @@ RUN npm run build
 ###
 # Stage 2: Production runtime
 ###
-FROM node:20-alpine
+FROM node:22-alpine
 
 WORKDIR /app
 
