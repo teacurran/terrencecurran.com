@@ -274,11 +274,21 @@
             labels:
               app: {{ app_name }}
             annotations:
+              cert-manager.io/cluster-issuer: letsencrypt-prod
               nginx.ingress.kubernetes.io/ssl-redirect: "true"
               nginx.ingress.kubernetes.io/proxy-body-size: "50m"
               nginx.ingress.kubernetes.io/use-forwarded-headers: "true"
           spec:
             ingressClassName: nginx
+            tls:
+              - hosts:
+                  - {{ ingress_host }}
+          {% if ingress_hosts_extra %}
+          {% for extra_host in ingress_hosts_extra.split(',') %}
+                  - {{ extra_host | trim }}
+          {% endfor %}
+          {% endif %}
+                secretName: terrencecurran-tls-{{ k8s_namespace }}
             rules:
               - host: {{ ingress_host }}
                 http:
