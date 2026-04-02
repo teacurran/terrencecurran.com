@@ -236,15 +236,12 @@ jobs:
 
           echo "Running health check..."
           HEALTH_OUTPUT=$(ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=ERROR ${K3S_USER}@${K3S_HOST} \
-            "kubectl run smoke-test-health --rm --restart=Never --image=curlimages/curl:latest -n ${DEPLOYMENT_NAMESPACE} -- \
-            curl -s -o /dev/null -w '%{http_code}' http://terrencecurran-service.${DEPLOYMENT_NAMESPACE}.svc.cluster.local/health" 2>&1)
-
-          HEALTH_STATUS=$(echo "${HEALTH_OUTPUT}" | grep -oE '[0-9]{3}' | head -1)
+            "kubectl run smoke-test-health --rm -i --restart=Never --image=busybox -n ${DEPLOYMENT_NAMESPACE} -- \
+            wget -qO- http://terrencecurran-service.${DEPLOYMENT_NAMESPACE}.svc.cluster.local/health" 2>&1)
 
           echo "Health check output: ${HEALTH_OUTPUT}"
-          echo "Health check status: ${HEALTH_STATUS}"
-          if [ "${HEALTH_STATUS}" != "200" ]; then
-            echo "Health check failed with status ${HEALTH_STATUS}"
+          if ! echo "${HEALTH_OUTPUT}" | grep -q "OK"; then
+            echo "Health check failed"
             exit 1
           fi
 
