@@ -1,0 +1,37 @@
+---
+import { getEmDashEntry } from "emdash";
+import { PortableText } from "emdash/ui";
+import Layout from "../../layouts/Base.astro";
+
+const { slug } = Astro.params;
+const { entry: project } = await getEmDashEntry("projects", slug!);
+
+if (!project) return Astro.redirect("/404");
+
+const title = String(project.data.title);
+---
+
+<Layout title={`${title} — Terrence Curran`}>
+  <article>
+    <header class="article-header">
+      <h1>{title}</h1>
+      <div class="article-meta">
+        {project.data.client && <span>{project.data.client}</span>}
+        {project.data.year && <span>{project.data.year}</span>}
+        {project.data.project_url && (
+          <a href={String(project.data.project_url)} target="_blank" rel="noopener">
+            View project ↗
+          </a>
+        )}
+      </div>
+    </header>
+    {project.data.summary && (
+      <p class="prose" style="font-size: 1.1rem; color: var(--color-text-muted); margin-bottom: 2rem;">
+        {project.data.summary}
+      </p>
+    )}
+    <div class="prose">
+      {Array.isArray(project.data.content) && <PortableText value={project.data.content} />}
+    </div>
+  </article>
+</Layout>

@@ -1,0 +1,64 @@
+---
+import { getEmDashCollection } from "emdash";
+import Layout from "../layouts/Base.astro";
+
+const { entries: recentPosts } = await getEmDashCollection("posts", {
+  status: "published",
+  limit: 5,
+  orderBy: { created_at: "desc" },
+});
+
+const { entries: projects } = await getEmDashCollection("projects", {
+  status: "published",
+  orderBy: { sort_order: "asc" },
+  limit: 6,
+});
+---
+
+<Layout title="Terrence Curran — Software Engineering & Design">
+  <section class="hero">
+    <h1>Terrence Curran</h1>
+    <p class="tagline">Software Engineering & Design</p>
+  </section>
+
+  {projects.length > 0 && (
+    <section class="projects">
+      <h2>Selected Work</h2>
+      <div class="project-grid">
+        {projects.map((project) => (
+          <a href={`/work/${project.id}`} class="project-card">
+            <h3>{project.data.title}</h3>
+            {project.data.client && <span class="client">{project.data.client}</span>}
+            {project.data.summary && <p>{String(project.data.summary).slice(0, 120)}...</p>}
+          </a>
+        ))}
+      </div>
+      <a href="/work" class="view-all">View all projects →</a>
+    </section>
+  )}
+
+  {recentPosts.length > 0 && (
+    <section class="posts">
+      <h2>Recent Posts</h2>
+      <ul class="post-list">
+        {recentPosts.map((post) => (
+          <li>
+            <a href={`/blog/${post.id}`}>
+              <span class="post-title">{post.data.title}</span>
+              {post.data.date && (
+                <time datetime={String(post.data.date)}>
+                  {new Date(String(post.data.date)).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a href="/blog" class="view-all">View all posts →</a>
+    </section>
+  )}
+</Layout>

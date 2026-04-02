@@ -1,0 +1,23 @@
+---
+import { getEmDashCollection } from "emdash";
+import Layout from "../../layouts/Base.astro";
+
+const { entries: projects } = await getEmDashCollection("projects", {
+  status: "published",
+  orderBy: { sort_order: "asc" },
+});
+---
+
+<Layout title="Work — Terrence Curran">
+  <h1>Work</h1>
+  <div class="project-grid">
+    {projects.map((project) => (
+      <a href={`/work/${project.id}`} class="project-card">
+        <h3>{project.data.title}</h3>
+        {project.data.client && <span class="client">{project.data.client}</span>}
+        {project.data.year && <span class="client"> · {project.data.year}</span>}
+        {project.data.summary && <p>{String(project.data.summary).slice(0, 150)}...</p>}
+      </a>
+    ))}
+  </div>
+</Layout>

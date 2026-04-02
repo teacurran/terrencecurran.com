@@ -1,0 +1,35 @@
+---
+import { getEmDashEntry } from "emdash";
+import { PortableText } from "emdash/ui";
+import Layout from "../../layouts/Base.astro";
+
+const { slug } = Astro.params;
+const { entry: post } = await getEmDashEntry("posts", slug!);
+
+if (!post) return Astro.redirect("/404");
+
+const title = String(post.data.title);
+const date = post.data.date ? new Date(String(post.data.date)) : null;
+---
+
+<Layout title={`${title} — Terrence Curran`}>
+  <article>
+    <header class="article-header">
+      <h1>{title}</h1>
+      <div class="article-meta">
+        {date && (
+          <time datetime={date.toISOString()}>
+            {date.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </time>
+        )}
+      </div>
+    </header>
+    <div class="prose">
+      {Array.isArray(post.data.content) && <PortableText value={post.data.content} />}
+    </div>
+  </article>
+</Layout>

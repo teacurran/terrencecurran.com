@@ -1,0 +1,31 @@
+---
+import { getEmDashCollection } from "emdash";
+import Layout from "../../layouts/Base.astro";
+
+const { entries: posts } = await getEmDashCollection("posts", {
+  status: "published",
+  orderBy: { created_at: "desc" },
+});
+---
+
+<Layout title="Blog — Terrence Curran">
+  <h1>Blog</h1>
+  <ul class="post-list">
+    {posts.map((post) => (
+      <li>
+        <a href={`/blog/${post.id}`}>
+          <span class="post-title">{post.data.title}</span>
+          {post.data.date && (
+            <time datetime={String(post.data.date)}>
+              {new Date(String(post.data.date)).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </time>
+          )}
+        </a>
+      </li>
+    ))}
+  </ul>
+</Layout>
