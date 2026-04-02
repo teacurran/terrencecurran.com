@@ -9,7 +9,6 @@
       "supports": ["drafts", "revisions", "search", "seo"],
       "fields": [
         { "slug": "title", "label": "Title", "type": "string", "required": true },
-        { "slug": "slug", "label": "Slug", "type": "slug", "required": true },
         { "slug": "excerpt", "label": "Excerpt", "type": "text" },
         { "slug": "content", "label": "Content", "type": "portableText", "required": true },
         { "slug": "featured_image", "label": "Featured Image", "type": "image" },
@@ -24,7 +23,6 @@
       "supports": ["drafts", "revisions", "search", "seo"],
       "fields": [
         { "slug": "title", "label": "Title", "type": "string", "required": true },
-        { "slug": "slug", "label": "Slug", "type": "slug", "required": true },
         { "slug": "client", "label": "Client", "type": "string" },
         { "slug": "year", "label": "Year", "type": "string" },
         { "slug": "summary", "label": "Summary", "type": "text", "required": true },
@@ -42,7 +40,6 @@
       "supports": ["drafts", "revisions", "search", "seo"],
       "fields": [
         { "slug": "title", "label": "Title", "type": "string", "required": true },
-        { "slug": "slug", "label": "Slug", "type": "slug", "required": true },
         { "slug": "content", "label": "Content", "type": "portableText", "required": true }
       ]
     }
