@@ -32,6 +32,9 @@ COPY --from=build --chown=emdash:emdash /build/dist ./dist
 COPY --from=build --chown=emdash:emdash /build/node_modules ./node_modules
 COPY --from=build --chown=emdash:emdash /build/package.json ./
 
+# Create sessions directory (Astro hardcodes the build-time path)
+RUN mkdir -p /build/node_modules/.astro/sessions && chown -R emdash:emdash /build
+
 # Switch to non-root user
 USER emdash
 
