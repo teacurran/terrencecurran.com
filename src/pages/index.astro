@@ -21,22 +21,6 @@ const { entries: projects } = await getEmDashCollection("projects", {
     <p class="tagline">Software Engineering & Design</p>
   </section>
 
-  {projects.length > 0 && (
-    <section class="projects">
-      <h2>Selected Work</h2>
-      <div class="project-grid">
-        {projects.map((project) => (
-          <a href={`/work/${project.id}`} class="project-card">
-            <h3>{project.data.title}</h3>
-            {project.data.client && <span class="client">{project.data.client}</span>}
-            {project.data.summary && <p>{String(project.data.summary).slice(0, 120)}...</p>}
-          </a>
-        ))}
-      </div>
-      <a href="/work" class="view-all">View all projects →</a>
-    </section>
-  )}
-
   {recentPosts.length > 0 && (
     <section class="posts">
       <h2>Recent Posts</h2>
@@ -59,6 +43,22 @@ const { entries: projects } = await getEmDashCollection("projects", {
         ))}
       </ul>
       <a href="/blog" class="view-all">View all posts →</a>
+    </section>
+  )}
+
+  {projects.length > 0 && (
+    <section class="projects">
+      <h2>Selected Work</h2>
+      <div class="project-grid">
+        {projects.map((project) => (
+          <a href={`/work/${project.id}`} class="project-card">
+            <h3>{project.data.title}</h3>
+            {project.data.client && <span class="client">{project.data.client}</span>}
+            {project.data.summary && <p>{String(project.data.summary).slice(0, 120)}...</p>}
+          </a>
+        ))}
+      </div>
+      <a href="/work" class="view-all">View all projects →</a>
     </section>
   )}
 </Layout>
