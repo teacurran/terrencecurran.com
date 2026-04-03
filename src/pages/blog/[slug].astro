@@ -1,6 +1,7 @@
 ---
 import { getEmDashEntry } from "emdash";
 import { PortableText } from "emdash/ui";
+import Image from "../../components/Image.astro";
 import Layout from "../../layouts/Base.astro";
 
 const { slug } = Astro.params;
@@ -29,7 +30,7 @@ const date = post.data.date ? new Date(String(post.data.date)) : null;
       </div>
     </header>
     <div class="prose">
-      {Array.isArray(post.data.content) && <PortableText value={post.data.content} />}
+      {Array.isArray(post.data.content) && <PortableText value={post.data.content} components={{ type: { image: Image } }} />}
     </div>
   </article>
 </Layout>

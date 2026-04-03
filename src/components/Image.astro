@@ -1,0 +1,41 @@
+---
+/**
+ * Custom Portable Text image component
+ *
+ * Handles both migrated content (url field) and EmDash media (asset._ref).
+ */
+export interface Props {
+  node: {
+    _type: "image";
+    _key: string;
+    url?: string;
+    alt?: string;
+    asset?: {
+      _ref: string;
+      url?: string;
+    };
+  };
+}
+
+const { node } = Astro.props;
+
+const src = node.url || node.asset?.url || (node.asset?._ref ? `/_emdash/api/media/file/${node.asset._ref}` : "");
+const alt = node.alt || "";
+---
+
+{src && (
+  <figure class="content-image">
+    <img src={src} alt={alt} loading="lazy" decoding="async" />
+  </figure>
+)}
+
+<style>
+  .content-image {
+    margin: 1.5rem 0;
+  }
+  .content-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.375rem;
+  }
+</style>
