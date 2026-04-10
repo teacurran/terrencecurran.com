@@ -44,7 +44,7 @@
         { "slug": "summary", "label": "Summary", "type": "text", "required": true },
         { "slug": "content", "label": "Content", "type": "portableText" },
         { "slug": "featured_image", "label": "Featured Image", "type": "image" },
-        { "slug": "font_file", "label": "Font File", "type": "image" },
+        { "slug": "font_file", "label": "Font File", "type": "string" },
         { "slug": "github_url", "label": "GitHub URL", "type": "string" },
         { "slug": "download_url", "label": "Download URL", "type": "string" },
         { "slug": "sort_order", "label": "Sort Order", "type": "number" }
