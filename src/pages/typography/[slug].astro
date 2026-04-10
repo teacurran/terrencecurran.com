@@ -39,26 +39,6 @@ const fontUrl = typeface.data.font_file ? String(typeface.data.font_file) : unde
       </section>
     )}
 
-    {fontUrl && (
-      <section class="typeface-section">
-        <h2>Specimen</h2>
-        <div class="specimen-block">
-          <style>{`
-            @font-face {
-              font-family: "specimen-${slug}";
-              src: url("${fontUrl}") format("woff2");
-              font-display: swap;
-            }
-          `}</style>
-          <div class="specimen-alphabet" style={`font-family: "specimen-${slug}", serif;`}>
-            <p class="specimen-upper">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
-            <p class="specimen-lower">abcdefghijklmnopqrstuvwxyz</p>
-            <p class="specimen-numbers">0123456789</p>
-            <p class="specimen-symbols">!@#$%^&*(),.?:;</p>
-          </div>
-        </div>
-      </section>
-    )}
 
     {Array.isArray(typeface.data.content) && typeface.data.content.length > 0 && (
       <section class="typeface-section">
@@ -152,38 +132,6 @@ const fontUrl = typeface.data.font_file ? String(typeface.data.font_file) : unde
     outline: none;
     word-break: break-word;
     transition: opacity 0.3s;
-  }
-
-  /* Specimen styles */
-  .specimen-block {
-    border: 1px solid var(--color-border);
-    border-radius: 0.5rem;
-    padding: 2rem 1.5rem;
-    background: var(--color-card-bg);
-  }
-  .specimen-alphabet p {
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.05em;
-  }
-  .specimen-alphabet p:last-child {
-    margin-bottom: 0;
-  }
-  .specimen-upper {
-    font-size: 2.5rem;
-    line-height: 1.3;
-  }
-  .specimen-lower {
-    font-size: 2.5rem;
-    line-height: 1.3;
-  }
-  .specimen-numbers {
-    font-size: 2rem;
-    line-height: 1.3;
-  }
-  .specimen-symbols {
-    font-size: 1.5rem;
-    line-height: 1.3;
-    color: var(--color-text-muted);
   }
 
   /* Links */
