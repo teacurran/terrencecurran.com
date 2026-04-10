@@ -1,0 +1,104 @@
+---
+import { getEmDashCollection } from "emdash";
+import Layout from "../../layouts/Base.astro";
+
+const { entries: typefaces } = await getEmDashCollection("typefaces", {
+  status: "published",
+  orderBy: { sort_order: "asc" },
+});
+---
+
+<Layout title="Typography — Terrence Curran" description="Original typefaces designed by Terrence Curran">
+  <h1>Typography</h1>
+  <p class="typography-intro">
+    Original typefaces designed between 1996 and present.
+    Most are available under the <a href="https://openfontlicense.org/" target="_blank" rel="noopener">SIL Open Font License</a> —
+    source files and downloads on <a href="https://github.com/teacurran/typography" target="_blank" rel="noopener">GitHub</a>.
+  </p>
+  <div class="typeface-grid">
+    {typefaces.map((typeface) => {
+      const fontFile = typeface.data.font_file as { url?: string } | undefined;
+      const fontUrl = fontFile?.url;
+      const slug = typeface.id;
+      const title = String(typeface.data.title);
+      return (
+        <a href={`/typography/${slug}`} class="typeface-card">
+          {fontUrl && (
+            <style>{`
+              @font-face {
+                font-family: "preview-${slug}";
+                src: url("${fontUrl}") format("opentype");
+                font-display: swap;
+              }
+            `}</style>
+          )}
+          <div
+            class="typeface-specimen"
+            style={fontUrl ? `font-family: "preview-${slug}", serif;` : undefined}
+          >
+            {title}
+          </div>
+          <div class="typeface-info">
+            <h3>{title}</h3>
+            {typeface.data.year && <span class="typeface-year">{typeface.data.year}</span>}
+          </div>
+        </a>
+      );
+    })}
+  </div>
+</Layout>
+
+<style>
+  .typography-intro {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    max-width: 36rem;
+  }
+
+  .typeface-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 1.5rem;
+  }
+
+  .typeface-card {
+    display: block;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    background: var(--color-card-bg);
+    color: var(--color-text);
+    overflow: hidden;
+    transition: border-color 0.15s;
+  }
+  .typeface-card:hover {
+    border-color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .typeface-specimen {
+    padding: 2rem 1.5rem;
+    font-size: 2rem;
+    line-height: 1.2;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+    min-height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .typeface-info {
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .typeface-info h3 {
+    font-size: 1rem;
+    font-family: var(--font-sans);
+  }
+  .typeface-year {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+</style>

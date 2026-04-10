@@ -33,6 +33,24 @@
       ]
     },
     {
+      "slug": "typefaces",
+      "label": "Typefaces",
+      "labelSingular": "Typeface",
+      "urlPattern": "/typography/{slug}",
+      "supports": ["drafts", "revisions", "search", "seo"],
+      "fields": [
+        { "slug": "title", "label": "Title", "type": "string", "required": true },
+        { "slug": "year", "label": "Year", "type": "string" },
+        { "slug": "summary", "label": "Summary", "type": "text", "required": true },
+        { "slug": "content", "label": "Content", "type": "portableText" },
+        { "slug": "featured_image", "label": "Featured Image", "type": "image" },
+        { "slug": "font_file", "label": "Font File", "type": "file" },
+        { "slug": "github_url", "label": "GitHub URL", "type": "string" },
+        { "slug": "download_url", "label": "Download URL", "type": "string" },
+        { "slug": "sort_order", "label": "Sort Order", "type": "number" }
+      ]
+    },
+    {
       "slug": "pages",
       "label": "Pages",
       "labelSingular": "Page",
@@ -49,7 +67,7 @@
       "name": "categories",
       "label": "Categories",
       "hierarchical": true,
-      "collections": ["posts", "projects"]
+      "collections": ["posts", "projects", "typefaces"]
     },
     {
       "name": "tags",
@@ -64,6 +82,7 @@
       "label": "Main Navigation",
       "items": [
         { "type": "custom", "label": "Work", "url": "/work" },
+        { "type": "custom", "label": "Typography", "url": "/typography" },
         { "type": "custom", "label": "Blog", "url": "/blog" },
         { "type": "custom", "label": "About", "url": "/about" },
         { "type": "custom", "label": "Contact", "url": "/contact" }
