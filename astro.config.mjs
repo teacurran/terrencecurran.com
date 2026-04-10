@@ -14,6 +14,8 @@ export default defineConfig({
       { hostname: "terrencecurran.com", protocol: "https" },
       { hostname: "www.terrencecurran.com", protocol: "https" },
       { hostname: "beta.terrencecurran.com", protocol: "https" },
+      { hostname: "wirelust.com", protocol: "https" },
+      { hostname: "www.wirelust.com", protocol: "https" },
     ],
   },
   adapter: node({
