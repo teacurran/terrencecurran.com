@@ -89,6 +89,244 @@
       ]
     }
   ],
+  "content": {
+    "typefaces": [
+      {
+        "id": "pantaloons",
+        "slug": "pantaloons",
+        "status": "published",
+        "data": {
+          "title": "Pantaloons",
+          "year": "1997",
+          "summary": "By far the most popular typeface from grilledcheese.com. Based on former free typeface \"Big A\", more time was spent on this design than any other. A full 256-character set with careful attention to detail.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 1
+        }
+      },
+      {
+        "id": "hash-smash",
+        "slug": "hash-smash",
+        "status": "published",
+        "data": {
+          "title": "Hash Smash",
+          "year": "1997",
+          "summary": "One of the first typefaces completed with a full 256-character set. Complex letters that at larger point sizes look like they were sketched.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 2
+        }
+      },
+      {
+        "id": "skydoor",
+        "slug": "skydoor",
+        "status": "published",
+        "data": {
+          "title": "SkyDoor",
+          "year": "1997",
+          "summary": "One of the very first designs and still a favorite. Comes with SkyDoor Conservative, a full set of the typeface contained within the main circle.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 3
+        }
+      },
+      {
+        "id": "aerosol-menace",
+        "slug": "aerosol-menace",
+        "status": "published",
+        "data": {
+          "title": "Aerosol Menace",
+          "year": "1997",
+          "summary": "Designed to look like graffiti, taken out of a sketchbook. A reworking of the original Aerosol Solid and Aerosol Shadow typefaces from grilledcheese.com.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 4
+        }
+      },
+      {
+        "id": "batman-beat-the-hell-outta-me",
+        "slug": "batman-beat-the-hell-outta-me",
+        "status": "published",
+        "data": {
+          "title": "Batman Beat the Hell Outta Me",
+          "year": "1997",
+          "summary": "Named after a line in a Wesley Willis song. The idea was to create a style similar to the action words that appear on screen when someone gets punched in the old Batman and Robin TV show.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 5
+        }
+      },
+      {
+        "id": "ransom-threat",
+        "slug": "ransom-threat",
+        "status": "published",
+        "data": {
+          "title": "Ransom Threat",
+          "year": "1999",
+          "summary": "A display typeface made from cut-out letterforms in the style of a ransom note. Each character has a distinct, irregular feel.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 6
+        }
+      },
+      {
+        "id": "giggapop",
+        "slug": "giggapop",
+        "status": "published",
+        "data": {
+          "title": "Giggapop",
+          "year": "1998",
+          "summary": "Uppercase is solid, lowercase is outline. An experiment in kerning and fitting letters together.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 7
+        }
+      },
+      {
+        "id": "metropass",
+        "slug": "metropass",
+        "status": "published",
+        "data": {
+          "title": "Metropass",
+          "year": "1999",
+          "summary": "Made from a hotel room in New York City on a laptop. The first typeface ever made completely on a Windows computer.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 8
+        }
+      },
+      {
+        "id": "absurdly-complex-rad",
+        "slug": "absurdly-complex-rad",
+        "status": "published",
+        "data": {
+          "title": "Absurdly Complex Rad",
+          "year": "1998",
+          "summary": "Part of the Rad Face family. Only 26 characters because every possible character combination was kerned by hand to make it work just right. The most complex of the Rad Face typefaces.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 9
+        }
+      },
+      {
+        "id": "simple-rad",
+        "slug": "simple-rad",
+        "status": "published",
+        "data": {
+          "title": "Simple Rad",
+          "year": "1998",
+          "summary": "Part of the Rad Face family. The simplest variant of the series, with clean forms that work at a wider range of sizes.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 10
+        }
+      },
+      {
+        "id": "electro-candy-1",
+        "slug": "electro-candy-1",
+        "status": "published",
+        "data": {
+          "title": "Electro Candy 1",
+          "year": "1999",
+          "summary": "A display typeface with electronic and candy-inspired aesthetic. 100-character set.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 11
+        }
+      },
+      {
+        "id": "electro-candy-2",
+        "slug": "electro-candy-2",
+        "status": "published",
+        "data": {
+          "title": "Electro Candy 2",
+          "year": "1999",
+          "summary": "A companion to Electro Candy 1 with alternate letterforms in the same electronic aesthetic.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 12
+        }
+      },
+      {
+        "id": "graft-fill",
+        "slug": "graft-fill",
+        "status": "published",
+        "data": {
+          "title": "Graft Fill",
+          "year": "2001",
+          "summary": "The filled variant of the Political Graft typeface. A display face with strong geometric forms.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 13
+        }
+      },
+      {
+        "id": "graft-outline",
+        "slug": "graft-outline",
+        "status": "published",
+        "data": {
+          "title": "Graft Outline",
+          "year": "2001",
+          "summary": "The outline variant of the Political Graft typeface. Pairs with Graft Fill for layered typographic effects.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 14
+        }
+      },
+      {
+        "id": "sharpie-stylie",
+        "slug": "sharpie-stylie",
+        "status": "published",
+        "data": {
+          "title": "Sharpie Stylie",
+          "year": "1998",
+          "summary": "A hand-drawn display typeface with the feel of marker pen lettering. Bold, expressive characters.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 15
+        }
+      },
+      {
+        "id": "bitshift",
+        "slug": "bitshift",
+        "status": "published",
+        "data": {
+          "title": "Bitshift",
+          "year": "1998",
+          "summary": "A digital-inspired display typeface with pixel and technology influences.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 16
+        }
+      },
+      {
+        "id": "taunton-swank",
+        "slug": "taunton-swank",
+        "status": "published",
+        "data": {
+          "title": "Taunton Swank",
+          "year": "2020",
+          "summary": "A more recent typeface design with a refined, contemporary aesthetic.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 17
+        }
+      },
+      {
+        "id": "gffft",
+        "slug": "gffft",
+        "status": "published",
+        "data": {
+          "title": "GFFFT",
+          "year": "2020",
+          "summary": "A recent experimental typeface design.",
+          "github_url": "https://github.com/teacurran/typography/tree/main/src/main/sfd",
+          "download_url": "https://github.com/teacurran/typography/tree/main/rendered/otf",
+          "sort_order": 18
+        }
+      }
+    ]
+  },
   "settings": {
     "site_title": "Terrence Curran",
     "site_description": "Software Engineering & Design",
