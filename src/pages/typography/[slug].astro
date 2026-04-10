@@ -15,8 +15,8 @@ const year = typeface.data.year ? String(typeface.data.year) : null;
 const summary = typeface.data.summary ? String(typeface.data.summary) : null;
 const githubUrl = typeface.data.github_url ? String(typeface.data.github_url) : null;
 const downloadUrl = typeface.data.download_url ? String(typeface.data.download_url) : null;
-const fontFile = typeface.data.font_file as { url?: string; filename?: string } | undefined;
-const fontUrl = fontFile?.url;
+const fontFile = typeface.data.font_file as { id?: string; src?: string; alt?: string } | undefined;
+const fontUrl = fontFile?.src;
 ---
 
 <Layout title={`${title} — Typography — Terrence Curran`} description={summary ?? `${title} typeface by Terrence Curran`}>
@@ -47,7 +47,7 @@ const fontUrl = fontFile?.url;
           <style>{`
             @font-face {
               font-family: "specimen-${slug}";
-              src: url("${fontUrl}") format("opentype");
+              src: url("${fontUrl}") format("woff2");
               font-display: swap;
             }
           `}</style>

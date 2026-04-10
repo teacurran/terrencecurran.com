@@ -1,0 +1,26 @@
+diff --git a/node_modules/emdash/src/astro/routes/api/media.ts b/node_modules/emdash/src/astro/routes/api/media.ts
+index d74351b..74ff335 100644
+--- a/node_modules/emdash/src/astro/routes/api/media.ts
++++ b/node_modules/emdash/src/astro/routes/api/media.ts
+@@ -104,7 +104,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
+ 		}
+ 
+ 		// Validate file type
+-		const allowedTypes = ["image/", "video/", "audio/", "application/pdf"];
++		const allowedTypes = ["image/", "video/", "audio/", "application/pdf", "font/", "application/font"];
+ 		if (!allowedTypes.some((type) => file.type.startsWith(type))) {
+ 			return apiError("INVALID_TYPE", "File type not allowed", 400);
+ 		}
+diff --git a/node_modules/emdash/src/astro/routes/api/media/upload-url.ts b/node_modules/emdash/src/astro/routes/api/media/upload-url.ts
+index 13d0c56..8a074bd 100644
+--- a/node_modules/emdash/src/astro/routes/api/media/upload-url.ts
++++ b/node_modules/emdash/src/astro/routes/api/media/upload-url.ts
+@@ -63,7 +63,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
+ 		if (isParseError(body)) return body;
+ 
+ 		// Validate content type
+-		const allowedTypes = ["image/", "video/", "audio/", "application/pdf"];
++		const allowedTypes = ["image/", "video/", "audio/", "application/pdf", "font/", "application/font"];
+ 		if (!allowedTypes.some((type) => body.contentType.startsWith(type))) {
+ 			return apiError("INVALID_TYPE", "File type not allowed", 400);
+ 		}

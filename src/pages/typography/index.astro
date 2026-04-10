@@ -17,8 +17,8 @@ const { entries: typefaces } = await getEmDashCollection("typefaces", {
   </p>
   <div class="typeface-grid">
     {typefaces.map((typeface) => {
-      const fontFile = typeface.data.font_file as { url?: string } | undefined;
-      const fontUrl = fontFile?.url;
+      const fontFile = typeface.data.font_file as { src?: string } | undefined;
+      const fontUrl = fontFile?.src;
       const slug = typeface.id;
       const title = String(typeface.data.title);
       return (
@@ -27,7 +27,7 @@ const { entries: typefaces } = await getEmDashCollection("typefaces", {
             <style>{`
               @font-face {
                 font-family: "preview-${slug}";
-                src: url("${fontUrl}") format("opentype");
+                src: url("${fontUrl}") format("woff2");
                 font-display: swap;
               }
             `}</style>
