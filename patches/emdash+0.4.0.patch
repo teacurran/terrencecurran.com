@@ -12,7 +12,7 @@ index ca3f320..bbaf74c 100644
  			.number()
  			.int()
 diff --git a/node_modules/emdash/src/astro/routes/api/media.ts b/node_modules/emdash/src/astro/routes/api/media.ts
-index d74351b..001b4fd 100644
+index 31f146a..fdc8198 100644
 --- a/node_modules/emdash/src/astro/routes/api/media.ts
 +++ b/node_modules/emdash/src/astro/routes/api/media.ts
 @@ -103,9 +103,19 @@ export const POST: APIRoute = async ({ request, locals }) => {
