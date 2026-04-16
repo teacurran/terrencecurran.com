@@ -3,13 +3,22 @@
 ###
 FROM node:22-alpine AS build
 
+# Install build tools for native npm packages (better-sqlite3)
+RUN apk add --no-cache python3 make g++
+
 WORKDIR /build
 
-# Copy package files for dependency caching
+# Copy package files and patches
 COPY package.json package-lock.json ./
+COPY patches ./patches
 
-# Install dependencies
-RUN npm ci
+# Install dependencies:
+# 1. Skip install scripts to avoid canvas native build (needs cairo/pango)
+# 2. Rebuild only better-sqlite3 (needed at runtime by emdash)
+# 3. Run postinstall for patch-package
+RUN npm ci --ignore-scripts && \
+    npm rebuild better-sqlite3 && \
+    npm run postinstall
 
 # Copy source code
 COPY . .
