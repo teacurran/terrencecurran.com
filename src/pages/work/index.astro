@@ -1,15 +1,22 @@
 ---
-import { getEmDashCollection } from "emdash";
 import Layout from "../../layouts/Base.astro";
 
-const { entries: projects } = await getEmDashCollection("projects", {
-  status: "published",
-  orderBy: { sort_order: "asc" },
-});
+// The old "Selected Work" portfolio is temporarily hidden. When the new
+// personal tech projects (e.g. Village Calendar, Grilled Cheese) are ready,
+// restore the emdash `projects` query below and re-add the nav link in Base.astro.
+//
+// import { getEmDashCollection } from "emdash";
+// const { entries: projects } = await getEmDashCollection("projects", {
+//   status: "published",
+//   orderBy: { sort_order: "asc" },
+// });
 ---
 
 <Layout title="Work — Terrence Curran">
   <h1>Work</h1>
+  <p>Nothing to see here yet — new projects coming soon.</p>
+
+  {/*
   <div class="project-grid">
     {projects.map((project) => (
       <a href={`/work/${project.id}`} class="project-card">
@@ -20,4 +27,5 @@ const { entries: projects } = await getEmDashCollection("projects", {
       </a>
     ))}
   </div>
+  */}
 </Layout>

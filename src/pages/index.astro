@@ -8,11 +8,14 @@ const { entries: recentPosts } = await getEmDashCollection("posts", {
   orderBy: { created_at: "desc" },
 });
 
-const { entries: projects } = await getEmDashCollection("projects", {
-  status: "published",
-  orderBy: { sort_order: "asc" },
-  limit: 6,
-});
+// "Selected Work" section is temporarily hidden while the old portfolio
+// projects are retired. Re-enable (and re-add the nav link + /work listing)
+// when the new personal tech projects are ready.
+// const { entries: projects } = await getEmDashCollection("projects", {
+//   status: "published",
+//   orderBy: { sort_order: "asc" },
+//   limit: 6,
+// });
 ---
 
 <Layout title="Terrence Curran — Software Engineering & Design">
@@ -46,6 +49,10 @@ const { entries: projects } = await getEmDashCollection("projects", {
     </section>
   )}
 
+  {/*
+    "Selected Work" section temporarily hidden — see the commented-out
+    projects query in the frontmatter above.
+
   {projects.length > 0 && (
     <section class="projects">
       <h2>Selected Work</h2>
@@ -61,4 +68,5 @@ const { entries: projects } = await getEmDashCollection("projects", {
       <a href="/work" class="view-all">View all projects →</a>
     </section>
   )}
+  */}
 </Layout>
